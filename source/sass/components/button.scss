@@ -1,0 +1,15 @@
+.button {
+  @include button;
+  transition: $transition;
+
+  &:active {
+    opacity: $opacity;
+  }
+}
+
+@media (min-width: $no_mobile) {
+
+  .button:hover,
+  .button:focus {
+  }
+}

@@ -1,0 +1,35 @@
+// sizes
+$mobile_min: 320px;
+$mobile_max: 768px;
+$tablet_max: 1024px;
+$desktop_max: 1200px;
+$no_mobile: 769px;
+
+// color scheme
+$white: #ffffff;
+$black: #000000;
+
+// fonts size
+$main_font: 16px;
+
+// another
+$transition: all 0.3s;
+$opacity: 0.87;
+$placeholders_dots: "-moz-placeholder", "-webkit-input-placeholder", "placeholder";
+$placeholders_dot: "-moz-placeholder", "-ms-input-placeholder";
+
+// @each $placeholder in $placeholders_dots {
+//   &::#{$placeholder} {
+//     transition: $transition;
+//   }
+// }
+
+// @each $placeholder in $placeholders_dot {
+//   &:#{$placeholder} {
+//     transition: $transition;
+//   }
+// }
+
+// retina
+$retina_dpi: 144dpi;
+$retina_dppx: 1.5dppx;

@@ -1,0 +1,17 @@
+mixin links (items, anchor=false, createSvg=false)
+	if createSvg && anchor
+		each nav in items
+			a(href='#'+nav.anchor aria-label=nav.label data-anchor='true')
+				+svg(nav.width, nav.height, nav.name)
+	else if createSvg
+		each nav in items
+			a(href='#' aria-label=nav.label)
+				+svg(nav.width, nav.height, nav.name)
+
+	else
+		if anchor
+			each nav in items
+				a(href='#'+nav data-anchor='true')= nav
+		else
+			each nav in items
+				a(href='#')= nav

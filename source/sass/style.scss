@@ -9,6 +9,7 @@
 
 // libs for plugins
 @import "./libs/swiper";
+@import "./libs/glightbox";
 
 // general
 @import "./general/fonts";
@@ -19,10 +20,20 @@
 @import "./components/container";
 @import "./components/button";
 @import "./components/image";
+@import "./components/background_image";
+@import "./components/underline";
+@import "./components/tick";
+@import "./components/placeholder";
+@import "./components/section";
+@import "./components/info";
+@import "./components/border";
+@import "./components/select_dropdown";
+@import "./components/form";
+@import "./components/tab_links";
+@import "./components/tab_contents";
+@import "./components/gallery";
 
 // blocks
 @import "./blocks/header";
 @import "./blocks/footer";
-
-// ui - удалить потом
-@import "./ui";
+@import "./blocks/slider_specialties";

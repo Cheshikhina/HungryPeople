@@ -1,0 +1,10 @@
+mixin textBlock(data, classBlock, isMainTitle)
+	if isMainTitle
+		h2(class=classBlock+'__title underline')= data.title
+	else
+		h3(class=classBlock+'__title underline')= data.title
+
+	if data.textMain
+		p(class=classBlock+'__desc')= data.textMain
+	if data.text
+		p(class=classBlock+'__text')= data.text

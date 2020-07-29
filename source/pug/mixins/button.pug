@@ -1,0 +1,15 @@
+mixin button(data, classBtn='')
+	if data.text
+		button(type=data.type class=classBtn class!=attributes.class)= data.text
+			if data.svg
+				+svg(data.svg.width, data.svg.height, data.svg.name)
+	else if data.label
+		button(type=data.type class=classBtn aria-label=data.label class!=attributes.class)
+			if data.svg
+				+svg(data.svg.width, data.svg.height, data.svg.name)
+	else
+		button(type=data.type class=classBtn class!=attributes.class)
+			if data.svg
+				+svg(data.svg.width, data.svg.height, data.svg.name)
+
+

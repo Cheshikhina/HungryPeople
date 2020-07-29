@@ -1,0 +1,89 @@
+.tab_contents {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.tab_contents__list {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(3, 29%);
+  justify-content: space-between;
+  align-content: flex-start;
+  width: 100%;
+  min-height: 434px;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: -5;
+}
+
+.tab_contents__list--active {
+  position: relative;
+  opacity: 1;
+  z-index: 1;
+}
+
+.tab_contents__item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  color: $dark;
+}
+
+.tab_contents__title,
+.tab_content__price_text {
+  @include font($fs_18, $lh_18);
+  margin: 0;
+  font-family: "Banny", "Arial", sans-serif;
+  font-weight: 700;
+  background-color: $white;
+  z-index: 2;
+}
+
+.tab_contents__title {
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+.tab_content__price_text {
+  display: inline-flex;
+  padding-left: 10px;
+  margin-left: 10px;
+}
+
+.tab_contents__text {
+  @include font($fs_12, $lh_14);
+  grid-column: span 2;
+  margin: 0;
+  color: rgba($dark, 0.5);
+}
+
+.tab_contents__dots {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    float: left;
+    width: 0;
+    bottom: 0;
+    white-space: nowrap;
+    content: ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+  }
+}
+
+// @media (min-width: $no_mobile) {
+
+  .tab_contents__list {
+    transform: translateY(-50px) scale(0.5);
+    transition: opacity $duration_07, transform $duration_07;
+  }
+
+  .tab_contents__list--active {
+    transform: translateY(0) scale(1);
+  }
+// }

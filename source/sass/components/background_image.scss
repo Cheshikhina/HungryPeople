@@ -1,0 +1,38 @@
+// .background_image {
+//   position: absolute;
+//   display: flex;
+//   width: 100%;
+//   height: 100%;
+//   top: 0;
+//   left: 0;
+//   z-index: 0;
+// }
+
+// .background_image__item {
+//   display: flex;
+//   width: 25%;
+//   height: 100%;
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   background-position: center;
+// }
+
+// .background_image__item--1 {
+//   width: 20.48%;
+//   animation: flip_right $duration_2 0.1s both;
+// }
+
+// .background_image__item--2 {
+//   width: 29.6%;
+//   animation: flip_left $duration_2 0.3s both;
+// }
+
+// .background_image__item--3 {
+//   animation: flip_right $duration_2 both;
+//   width: 29.78%;
+// }
+
+// .background_image__item--4 {
+//   animation: flip_left $duration_2 0.2s both;
+//   width: 20.28%;
+// }

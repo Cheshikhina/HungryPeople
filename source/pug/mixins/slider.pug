@@ -1,0 +1,14 @@
+mixin slider(data, isMainTitle=false)
+	div(class=data.class class!=attributes.class)
+		div(class=data.class+'__inner swiper-wrapper')
+			each val in data.slides
+				div(class=data.class+'__slide swiper-slide')
+					if val.blockText
+						div(class='section__box info')
+							+textBlock(val.blockText, 'info', isMainTitle)
+								if val.blockText.form
+									+form(val.blockText.form)
+
+						if val.blockImg
+							+img(val.blockImg, 'section')
+		div(class=data.class+'__pagination swiper-pagination swiper-pagination-white')

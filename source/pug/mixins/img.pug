@@ -1,0 +1,30 @@
+mixin img(data, classBlock, isBlockEvents = false)
+	if data.type == 'svg'
+		img(src=`./img/${data.name}.${data.type}` alt=data.alt width=data.width height=data.height class!=attributes.class)
+	else
+		if classBlock === 'section'
+			if isBlockEvents
+				each key in data
+					a(class=classBlock+'__photo_link' href="#")
+						div(class=classBlock+'__img image border')
+							h3(class=classBlock+'__photo_subtitle')= key.title
+							picture
+								source(type='image/webp' srcset=`./img/${key.name}@1x.webp 1x, ./img/${key.name}@2x.webp 2x`)
+								img(src=`img/${key.name}@1x.${key.type}` srcset=`./img/${key.name}@2x.${key.type} 2x` alt=key.alt width=key.width height=key.height loading='lazy' class='lazyload')
+			else
+				if data.modificator
+					div(class=classBlock+'__img image border '+data.modificator)
+						picture
+							source(type='image/webp' srcset=`./img/${data.name}@1x.webp 1x, ./img/${data.name}@2x.webp 2x`)
+							img(src=`img/${data.name}@1x.${data.type}` srcset=`./img/${data.name}@2x.${data.type} 2x` alt=data.alt width=data.width height=data.height loading='lazy' class='lazyload')
+				else
+					div(class=classBlock+'__img image border')
+						picture
+							source(type='image/webp' srcset=`./img/${data.name}@1x.webp 1x, ./img/${data.name}@2x.webp 2x`)
+							img(src=`img/${data.name}@1x.${data.type}` srcset=`./img/${data.name}@2x.${data.type} 2x` alt=data.alt width=data.width height=data.height loading='lazy' class='lazyload')
+		else
+			div(class=classBlock+'__img image')
+				picture
+					source(type='image/webp' srcset=`./img/${data.name}@1x.webp 1x, ./img/${data.name}@2x.webp 2x`)
+					img(src=`img/${data.name}@1x.${data.type}` srcset=`./img/${data.name}@2x.${data.type} 2x` alt=data.alt width=data.width height=data.height loading='lazy' class='lazyload')
+

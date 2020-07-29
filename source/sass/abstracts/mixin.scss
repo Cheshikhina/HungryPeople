@@ -1,5 +1,5 @@
 @function rem($size) {
-  @return $size / $main_font*1rem;
+  @return $size/$main_font*1rem;
 }
 
 @function decimal_round ($number, $digits: 0, $mode: round) {
@@ -95,26 +95,53 @@
   cursor: pointer;
 }
 
-@mixin background($name, $type, $background_color, $is_mobile) {
+@mixin background($name, $type, $background_color, $number:false) {
   @if $background_color !='false' {
     background-color: $background_color;
   }
 
-  background-repeat: no-repeat;
-  background-image: url("../img/#{$name}__desktop@1x.#{$type}");
+  @if $number {
+    background-repeat: no-repeat;
+    background-image: url("../img/#{$name}_#{$number}@1x.#{$type}");
+    background-image: url("../img/#{$name}_#{$number}@1x.webp");
+    background-size: cover;
+    background-position: center;
 
-  @media (min-resolution: $retina_dpi),
-  (min-resolution: $retina_dppx) {
-    background-image: url("../img/#{$name}__desktop@2x.#{$type}");
-  }
+    @media (min-resolution: $retina_dpi),
+    (min-resolution: $retina_dppx) {
+      background-image: url("../img/#{$name}_#{$number}@2x.#{$type}");
+      background-image: url("../img/#{$name}_#{$number}@2x.webp");
+    }
 
-  @media (max-width: $mobile_max) {
-    @if $is_mobile=='true' {
-      background-image: url("../img/#{$name}__mobile@1x.#{$type}");
+    @supports (((-webkit-appearance:none) and (stroke-color:transparent)) or ((overflow:-webkit-marquee) and (-webkit-text-size-adjust:none) and (justify-content:inherit))) {
+      background-image: image-set(url("../img/#{$name}_#{$number}@1x.#{$type}") 1x);
 
       @media (min-resolution: $retina_dpi),
       (min-resolution: $retina_dppx) {
-        background-image: url("../img/#{$name}__mobile@2x.#{$type}");
+        background-image: image-set(url("../img/#{$name}_#{$number}@2x.#{$type}") 2x);
+      }
+    }
+  }
+
+  @else {
+    background-repeat: no-repeat;
+    background-image: url("../img/#{$name}@1x.#{$type}");
+    background-image: url("../img/#{$name}@1x.webp");
+    background-size: cover;
+    background-position: center;
+
+    @media (min-resolution: $retina_dpi),
+    (min-resolution: $retina_dppx) {
+      background-image: url("../img/#{$name}@2x.#{$type}");
+      background-image: url("../img/#{$name}@2x.webp");
+    }
+
+    @supports (((-webkit-appearance:none) and (stroke-color:transparent)) or ((overflow:-webkit-marquee) and (-webkit-text-size-adjust:none) and (justify-content:inherit))) {
+      background-image: image-set(url("../img/#{$name}@1x.#{$type}") 1x);
+
+      @media (min-resolution: $retina_dpi),
+      (min-resolution: $retina_dppx) {
+        background-image: image-set(url("../img/#{$name}@2x.#{$type}") 2x);
       }
     }
   }
@@ -127,8 +154,41 @@
   padding: 0 $padding*1px;
 }
 
-@mixin center () {
+@mixin center {
   margin-left: auto;
   margin-right: auto;
 }
 
+@mixin flex_center($isJustifyContent: 0) {
+  display: flex;
+  align-items: center;
+
+  @if ($isJustifyContent==1) {
+    justify-content: center;
+  }
+}
+
+@mixin before {
+  position: absolute;
+  content: "";
+  display: flex;
+}
+
+@mixin titleBlock {
+  @include font($fs_36, $lh_48);
+  font-family: "Banny", "Arial", sans-serif;
+  margin: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@mixin descBlock {
+  @include font($fs_18, $lh_28);
+  font-weight: 700;
+  margin: 0;
+}
+
+@mixin textBlock {
+  @include font($fs_14, $lh_24);
+  margin: 0;
+}

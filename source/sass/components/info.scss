@@ -1,0 +1,38 @@
+  .info {
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .info__title {
+    @include titleBlock;
+    margin-bottom: 15px;
+  }
+
+  .info__desc {
+    @include descBlock;
+    margin-bottom: 26px;
+  }
+
+  .info__text {
+    @include textBlock;
+  }
+
+  // @media (min-width: $no_mobile) {
+    .info--animated {
+      .info__title {
+        animation: fade_top $duration_07 0.1s+$duration_03 both;
+      }
+
+      .info__desc {
+        animation: fade_top $duration_07 0.2s+$duration_03 both;
+      }
+
+      .info__text {
+        animation: fade_top $duration_07 0.3s+$duration_03 both;
+      }
+
+      .info__form {
+        animation: fade_top_form $duration_07 $duration_07 both;
+      }
+    }
+  // }

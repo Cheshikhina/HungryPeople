@@ -1,0 +1,20 @@
+.placeholder {
+  @include flex_center(1);
+  position: relative;
+
+  label {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    color: currentColor;
+  }
+
+  input:focus+label,
+  select:focus+label,
+  textarea:focus+label {
+    top: 0;
+    transform: translateY(-50%);
+    left: 10px;
+  }
+}

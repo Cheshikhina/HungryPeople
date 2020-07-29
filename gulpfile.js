@@ -13,6 +13,12 @@ const del = require('del');
 const cssBase64 = require('gulp-css-base64');
 const webpack = require('webpack-stream');
 const pug = require('gulp-pug');
+const realFavicon = require('gulp-real-favicon');
+const fs = require('fs');
+const FAVICON_DATA_FILE = 'faviconData.json';
+
+// Сообщение для компилируемых файлов
+let doNotEditMsg = '\n ВНИМАНИЕ! Этот файл генерируется автоматически.\n Любые изменения этого файла будут потеряны при следующей компиляции.\n Любое изменение проекта без возможности компиляции ДОЛЬШЕ И ДОРОЖЕ в 2-5 раз.\n\n';
 
 const dist = './build/js';
 gulp.task('index', () => {
@@ -102,7 +108,8 @@ gulp.task('server', function () {
   });
   gulp.watch('source/sass/**/*.{scss,sass}', gulp.series('css', 'base64', 'refresh'));
   gulp.watch('source/img/icon_*.svg', gulp.series('sprite', 'pug', 'refresh'));
-  gulp.watch('source/pages/**/*.pug', gulp.series('pug', 'refresh'));
+  gulp.watch('source/img/*.{png,jpg}', gulp.series('copy', 'pug', 'refresh'));
+  gulp.watch(['source/pug/**/*.pug', '!source/pug/common/mixins.pug'], gulp.series('delMixins', 'writePugMixinsFile', 'pug', 'refresh'));
   gulp.watch('source/js/**/*.js', gulp.series('index', 'refresh'));
 });
 
@@ -166,12 +173,112 @@ gulp.task('base64', function () {
 });
 
 gulp.task('pug', function () {
-  return gulp.src('source/pages/*.pug')
+  return gulp.src('source/pug/pages/*.pug')
     .pipe(pug({
       pretty: true
     }))
     .pipe(gulp.dest('build'));
 });
+
+gulp.task('generate-favicon', function (done) {
+  realFavicon.generateFavicon({
+    masterPicture: './source/img/helm.svg',
+    dest: './build/img/favicon/',
+    iconsPath: './img/favicon/',
+    design: {
+      ios: {
+        pictureAspect: 'backgroundAndMargin',
+        backgroundColor: '#333333',
+        margin: '21%',
+        assets: {
+          ios6AndPriorIcons: false,
+          ios7AndLaterIcons: false,
+          precomposedIcons: false,
+          declareOnlyDefaultIcon: true
+        }
+      },
+      desktopBrowser: {
+        design: 'raw'
+      },
+      windows: {
+        pictureAspect: 'noChange',
+        backgroundColor: '#4d2828',
+        onConflict: 'override',
+        assets: {
+          windows80Ie10Tile: false,
+          windows10Ie11EdgeTiles: {
+            small: false,
+            medium: true,
+            big: false,
+            rectangle: false
+          }
+        }
+      },
+      androidChrome: {
+        pictureAspect: 'noChange',
+        themeColor: '#333333',
+        manifest: {
+          display: 'standalone',
+          orientation: 'notSet',
+          onConflict: 'override',
+          declared: true
+        },
+        assets: {
+          legacyIcon: false,
+          lowResolutionIcons: false
+        }
+      },
+      safariPinnedTab: {
+        pictureAspect: 'blackAndWhite',
+        threshold: 94.375,
+        themeColor: '#5bbad5'
+      }
+    },
+    settings: {
+      scalingAlgorithm: 'Mitchell',
+      errorOnImageTooSmall: false,
+      readmeFile: false,
+      htmlCodeFile: false,
+      usePathAsIs: false
+    },
+    markupFile: FAVICON_DATA_FILE
+  }, function () {
+    done();
+  });
+});
+
+gulp.task('inject-favicon-markups', function (done) {
+  gulp.src(['./build/*.html'])
+    .pipe(realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code))
+    .pipe(gulp.dest('./build/'));
+  done();
+});
+
+gulp.task('check-for-favicon-update', function (done) {
+  let currentVersion = JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).version;
+  realFavicon.checkForUpdates(currentVersion, function (err) {
+    if (err) {
+      throw err;
+    }
+  });
+  done();
+});
+
+gulp.task('writePugMixinsFile', function (cb) {
+  let allBlocksWithPugFiles = getDirectories('./source/pug/mixins/');
+  let pugMixins = '//-' + doNotEditMsg.replace(/\n /gm, '\n  ');
+  allBlocksWithPugFiles.forEach(function (blockName) {
+    pugMixins += `include ../mixins/${blockName}\n`;
+  });
+  fs.writeFileSync('./source/pug/common/mixins.pug', pugMixins);
+  return cb();
+});
+
+function getDirectories(path) {
+  let source = path;
+  let res = fs.readdirSync(source);
+  return res;
+}
 
 gulp.task('copy', function () {
   return gulp.src([
@@ -184,10 +291,15 @@ gulp.task('copy', function () {
     .pipe(gulp.dest('build'));
 });
 
+
+gulp.task('delMixins', function () {
+  return del('./source/pug/common/mixins.pug');
+});
+
 gulp.task('clean', function () {
   return del('build');
 });
 
-gulp.task('build', gulp.series('clean', 'copy', 'index', 'css', 'base64', 'sprite', 'pug'));
+gulp.task('build', gulp.series('clean', 'delMixins', 'copy', 'index', 'css', 'base64', 'sprite', 'writePugMixinsFile', 'pug'));
 gulp.task('start', gulp.series('build', 'server'));
-gulp.task('prod', gulp.series('clean', 'copy', 'webp', 'images', 'index-min', 'css', 'base64', 'sprite', 'pug'));
+gulp.task('prod', gulp.series('clean', 'delMixins', 'copy', 'webp', 'images', 'index-min', 'css', 'base64', 'sprite', 'writePugMixinsFile', 'pug', 'generate-favicon', 'check-for-favicon-update', 'inject-favicon-markups'));

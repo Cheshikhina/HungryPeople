@@ -1,0 +1,27 @@
+.border {
+  position: relative;
+
+  &::after {
+    @include before;
+    width: calc(100% - 225px);
+    height: calc(100% - 225px);
+    top: 50%;
+    left: 0;
+    right: auto;
+    transform: translate(-50%, -50%);
+    background-color: rgba($black, 0.1);
+    border: 20px solid $accent;
+    box-shadow: $shadow_br;
+    border-radius: $br_05;
+    z-index: 5;
+  }
+}
+
+.border--right {
+  &::after {
+    left: auto;
+    right: 0;
+    transform: translate(50%, -50%);
+    box-shadow: $shadow_br_opacity;
+  }
+}

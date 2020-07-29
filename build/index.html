@@ -1,2 +1,794 @@
 <!DOCTYPE html>
-<html></html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Hungry People - the best restaurant">
+    <title>Hungry People</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header" id="home">
+        <div class="container header__inner">
+          <nav class="header__nav">
+            <div class="header__nav_inner"><a href="#home" data-anchor="true">home</a><a href="#about_us" data-anchor="true">about_us</a><a href="#team" data-anchor="true">team</a><a href="#booking" data-anchor="true">booking</a>
+            </div>
+            <div class="header__nav_img"><img src="./img/helm.svg" alt="Logotype" width="150" height="150"/>
+            </div>
+            <div class="header__nav_inner"><a href="#menu" data-anchor="true">menu</a><a href="#galerie" data-anchor="true">galerie</a><a href="#events" data-anchor="true">events</a><a href="#contact" data-anchor="true">contact</a>
+            </div>
+          </nav>
+          <div class="header__box">
+            <div class="header__time">Mon - Fri: 8PM - 10PM, Sat - Sun: 8PM - 3AM</div>
+            <div class="header__middle">
+              <p class="header__middle_subtitle">RESTAURANT</p>
+              <h1 class="header__middle_title underline underline--big">hungry people</h1>
+              <div class="header__middle_controls"><a class="button header__middle_btn" href="#book_link">BOOK TABLE</a>
+                <div class="header__middle_search">
+                  <form method="get">
+                    <div class="header__middle_field">
+                      <label for="header_search">EXPLORE</label>
+                      <input id="header_search" type="search" name="search"></input>
+                    </div>
+                    <button type="submit" aria-label="search">
+                      <svg width="25" height="25">
+                        <use xlink:href="./img/sprite.svg#icon_search"></use>
+                      </svg>
+                    </button>
+                  </form>
+                </div>
+              </div>
+              <div class="header__middle_scroll"><a class="header__scroll" href="#about_us" aria-label="scroll down" data-anchor="true"><span></span></a></div>
+            </div>
+            <div class="header__socials"><a href="#" aria-label="facebook">
+                <svg width="20" height="20">
+                  <use xlink:href="./img/sprite.svg#icon_facebook"></use>
+                </svg></a><a href="#" aria-label="twitter">
+                <svg width="20" height="20">
+                  <use xlink:href="./img/sprite.svg#icon_twitter"></use>
+                </svg></a><a href="#" aria-label="instagram">
+                <svg width="20" height="20">
+                  <use xlink:href="./img/sprite.svg#icon_instagram"></use>
+                </svg></a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="header header--sticky">
+          <div class="container header__inner">
+            <nav class="header__nav">
+              <div class="header__nav_inner"><a href="#home" data-anchor="true">home</a><a href="#about_us" data-anchor="true">about_us</a><a href="#team" data-anchor="true">team</a><a href="#booking" data-anchor="true">booking</a>
+              </div>
+              <div class="header__nav_img"><img src="./img/helm.svg" alt="Logotype" width="150" height="150"/>
+              </div>
+              <div class="header__nav_inner"><a href="#menu" data-anchor="true">menu</a><a href="#galerie" data-anchor="true">galerie</a><a href="#events" data-anchor="true">events</a><a href="#contact" data-anchor="true">contact</a>
+              </div>
+            </nav>
+          </div>
+        </div>
+        <section class="section container" id="about_us" data-section="true">
+          <div class="section__wrap container">
+            <div class="section__box info">
+              <h2 class="info__title underline">about us</h2>
+              <p class="info__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.</p>
+              <p class="info__text">Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.</p>
+            </div>
+            <div class="section__img image border border--right">
+              <picture>
+                <source type="image/webp" srcset="./img/about_us@1x.webp 1x, ./img/about_us@2x.webp 2x"/><img class="lazyload" src="img/about_us@1x.jpg" srcset="./img/about_us@2x.jpg 2x" alt="our restaurant through the glass of the fireplace" width="475" height="475" loading="lazy"/>
+              </picture>
+            </div>
+          </div>
+        </section>
+        <section class="section section--reverse section--team" id="team" data-section="true">
+          <div class="section__wrap container">
+            <h2 class="section__head">OUR TEAM</h2>
+            <div class="section__inner">
+              <div class="section__box info">
+                <h3 class="info__title underline">MASTER CHEF</h3>
+                <p class="info__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.</p>
+                <p class="info__text">Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.</p>
+              </div>
+              <div class="section__img image border">
+                <picture>
+                  <source type="image/webp" srcset="./img/our_team@1x.webp 1x, ./img/our_team@2x.webp 2x"/><img class="lazyload" src="img/our_team@1x.jpg" srcset="./img/our_team@2x.jpg 2x" alt="our chef at work" width="475" height="475" loading="lazy"/>
+                </picture>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section section--booking" id="booking" data-section="true">
+          <div class="section__wrap container">
+            <div class="section__inner">
+              <div class="section__box info">
+                <h3 class="info__title underline">book a table</h3>
+                <div class="form form--booking info__form">
+                  <form method="POST">
+                    <div class="placeholder form__field">
+                      <input id="booking_name" type="text" name="name"></input>
+                      <label for="booking_name">Name</label>
+                    </div>
+                    <div class="placeholder form__field">
+                      <input id="booking_email" type="email" name="email"></input>
+                      <label for="booking_email">Email</label>
+                    </div>
+                    <div class="placeholder form__field">
+                      <input id="booking_phone" type="text" name="phone"></input>
+                      <label for="booking_phone">Phone</label>
+                    </div>
+                    <div class="tick placeholder form__field form__field--select">
+                      <select id="booking_people" name="people" data-name="People">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                      <label for="booking_people">People</label>
+                    </div>
+                    <div class="placeholder form__field">
+                      <input id="booking_date" type="date" name="date"></input>
+                      <label for="booking_date">Date (mm/dd)</label>
+                    </div>
+                    <div class="tick placeholder form__field form__field--select">
+                      <select id="booking_time" name="time" data-name="Time">
+                        <option value="1">8:00PM-8:30PM</option>
+                        <option value="2">8:30PM-9:00PM</option>
+                        <option value="3">9:00PM-9:30PM</option>
+                        <option value="4">9:30PM-10:00PM</option>
+                      </select>
+                      <label for="booking_time">Time</label>
+                    </div>
+                    <button type="submit">BOOK NOW
+                    </button>
+                  </form>
+                </div>
+              </div>
+              <div class="section__img image border border--right">
+                <picture>
+                  <source type="image/webp" srcset="./img/booking@1x.webp 1x, ./img/booking@2x.webp 2x"/><img class="lazyload" src="img/booking@1x.jpg" srcset="./img/booking@2x.jpg 2x" alt="antique clock" width="475" height="475" loading="lazy"/>
+                </picture>
+              </div>
+            </div>
+            <p class="section__footer">Mon - Fri: <span>8PM - 10PM</span>, Sat - Sun: <span>8PM - 3AM</span>, Phone: <span>+40 729 131 637/+40 726 458 782</span>
+            </p>
+          </div>
+        </section>
+        <section class="section section--specialties" id="specialties" data-section="true">
+          <div class="section__wrap container">
+            <h2 class="section__head">specialties</h2>
+            <div class="slider_specialties">
+              <div class="slider_specialties__inner swiper-wrapper">
+                <div class="slider_specialties__slide swiper-slide">
+                  <div class="section__box info">
+                    <h3 class="info__title underline">pancakes</h3>
+                    <p class="info__desc">Lorem ipsum dolor sit amet.</p>
+                    <p class="info__text">Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.</p>
+                  </div>
+                  <div class="section__img image border border--right">
+                    <picture>
+                      <source type="image/webp" srcset="./img/specialties_2@1x.webp 1x, ./img/specialties_2@2x.webp 2x"/><img class="lazyload" src="img/specialties_2@1x.jpg" srcset="./img/specialties_2@2x.jpg 2x" alt="amazing dish prepared by our experts" width="475" height="475" loading="lazy"/>
+                    </picture>
+                  </div>
+                </div>
+                <div class="slider_specialties__slide swiper-slide">
+                  <div class="section__box info">
+                    <h3 class="info__title underline">chocolate pancakes</h3>
+                    <p class="info__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.</p>
+                    <p class="info__text">Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.</p>
+                  </div>
+                  <div class="section__img image border">
+                    <picture>
+                      <source type="image/webp" srcset="./img/specialties_1@1x.webp 1x, ./img/specialties_1@2x.webp 2x"/><img class="lazyload" src="img/specialties_1@1x.jpg" srcset="./img/specialties_1@2x.jpg 2x" alt="amazing dish prepared by our experts" width="475" height="475" loading="lazy"/>
+                    </picture>
+                  </div>
+                </div>
+                <div class="slider_specialties__slide swiper-slide">
+                  <div class="section__box info">
+                    <h3 class="info__title underline">chocolate</h3>
+                    <p class="info__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.</p>
+                    <p class="info__text">Integer ullamcorper neque eu purus euismod.</p>
+                  </div>
+                  <div class="section__img image border border--right">
+                    <picture>
+                      <source type="image/webp" srcset="./img/specialties_3@1x.webp 1x, ./img/specialties_3@2x.webp 2x"/><img class="lazyload" src="img/specialties_3@1x.jpg" srcset="./img/specialties_3@2x.jpg 2x" alt="amazing dish prepared by our experts" width="475" height="475" loading="lazy"/>
+                    </picture>
+                  </div>
+                </div>
+              </div>
+              <div class="slider_specialties__pagination swiper-pagination swiper-pagination-white"></div>
+            </div>
+          </div>
+        </section>
+        <section class="section section--menu" id="menu" data-section="true">
+          <div class="section__wrap container">
+            <div class="section__box info">
+              <h2 class="info__title underline">DELICIOUS MENU</h2>
+              <p class="info__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.</p>
+            </div>
+            <div class="section__tab">
+              <div class="section__tab_links tab_links">
+                <div class="swiper-wrapper tab_links__inner"><a class="tab_links__item swiper-slide" href="#" data-tabs="menu">
+                    <h3>pizza</h3></a><a class="tab_links__item swiper-slide" href="#" data-tabs="menu">
+                    <h3>soupe</h3></a><a class="tab_links__item swiper-slide" href="#" data-tabs="menu">
+                    <h3>pasta</h3></a><a class="tab_links__item swiper-slide" href="#" data-tabs="menu">
+                    <h3>wine</h3></a><a class="tab_links__item swiper-slide" href="#" data-tabs="menu">
+                    <h3>beer</h3></a><a class="tab_links__item swiper-slide" href="#" data-tabs="menu">
+                    <h3>drinks</h3></a>
+                </div>
+              </div>
+              <div class="section__tab_contents tab_contents">
+                <div class="tab_contents__list tab_contents__list--active" data-content="menu">
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PIZZA QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">55.68</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PIZZA QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">55.68</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PIZZA QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">55.68</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PIZZA QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">55.68</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PIZZA QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">55.68</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PIZZA QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">55.68</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PIZZA QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">55.68</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PIZZA QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">55.68</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PIZZA QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">55.68</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PIZZA QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">55.68</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PIZZA QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">55.68</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PIZZA QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">55.68</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PIZZA QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">55.68</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PIZZA QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">55.68</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PIZZA QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">55.68</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PIZZA QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">55.68</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PIZZA QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">55.68</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PIZZA QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">55.68</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PIZZA QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">55.68</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PIZZA QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">55.68</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PIZZA QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">55.68</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                </div>
+                <div class="tab_contents__list tab_contents__list--active" data-content="menu">
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">SOUPE QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">33.2</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">SOUPE QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">33.2</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">SOUPE QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">33.2</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper</p>
+                  </div>
+                </div>
+                <div class="tab_contents__list tab_contents__list--active" data-content="menu">
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PASTA</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">50</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">pasta</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PASTA</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">50</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">pasta</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PASTA</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">50</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">pasta</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PASTA</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">50</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">pasta</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PASTA</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">50</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">pasta</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PASTA</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">50</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">pasta</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PASTA</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">50</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">pasta</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PASTA</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">50</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">pasta</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PASTA</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">50</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">pasta</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PASTA</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">50</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">pasta</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PASTA</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">50</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">pasta</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PASTA</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">50</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">pasta</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">PASTA</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">50</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">pasta</p>
+                  </div>
+                </div>
+                <div class="tab_contents__list tab_contents__list--active" data-content="menu">
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">WINE</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">105.99</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">WINE</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">105.99</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">WINE</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">105.99</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">WINE</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">105.99</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">WINE</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">105.99</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">WINE</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">105.99</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">WINE</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">105.99</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">WINE</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">105.99</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">WINE</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">105.99</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">WINE</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">105.99</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">WINE</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">105.99</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">WINE</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">105.99</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">WINE</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">105.99</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">WINE</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">105.99</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">WINE</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">105.99</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">WINE</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">105.99</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">WINE</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">105.99</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">WINE</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">105.99</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">WINE</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">105.99</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">WINE</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">105.99</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">WINE</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">105.99</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">purus euismod</p>
+                  </div>
+                </div>
+                <div class="tab_contents__list tab_contents__list--active" data-content="menu">
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">BEER QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">55.68</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">BEER QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">55.68</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">BEER QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">55.68</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">BEER QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">55.68</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">BEER QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">55.68</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">BEER QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">55.68</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">BEER QUATRO STAGIONI</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">55.68</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                </div>
+                <div class="tab_contents__list tab_contents__list--active" data-content="menu">
+                  <div class="tab_contents__item">
+                    <div class="tab_contents__dots">
+                      <h4 class="tab_contents__title">DRINKS</h4>
+                      <p class="tab_content__price_text"><span class="tab_contents__price">10</span>&nbsp;USD</p>
+                    </div>
+                    <p class="tab_contents__text">Integer ullamcorper neque eu purus euismod</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section section--events" id="events" data-section="true">
+          <div class="section__wrap container">
+            <h2 class="section__head">PRIVATE EVENTS</h2>
+            <div class="section__photos"><a class="section__photo_link" href="#">
+                <div class="section__img image border">
+                  <h3 class="section__photo_subtitle">weddings</h3>
+                  <picture>
+                    <source type="image/webp" srcset="./img/private_evt_1@1x.webp 1x, ./img/private_evt_1@2x.webp 2x"/><img class="lazyload" src="img/private_evt_1@1x.jpg" srcset="./img/private_evt_1@2x.jpg 2x" alt="wedding rings" width="475" height="475" loading="lazy"/>
+                  </picture>
+                </div></a><a class="section__photo_link" href="#">
+                <div class="section__img image border">
+                  <h3 class="section__photo_subtitle">corporate parties</h3>
+                  <picture>
+                    <source type="image/webp" srcset="./img/private_evt_2@1x.webp 1x, ./img/private_evt_2@2x.webp 2x"/><img class="lazyload" src="img/private_evt_2@1x.jpg" srcset="./img/private_evt_2@2x.jpg 2x" alt="clinking glasses at an event" width="475" height="475" loading="lazy"/>
+                  </picture>
+                </div></a>
+            </div>
+            <p class="section__footer">For private events please call: <span> +40 729 131 637/+40 726 458 782 </span>or use the contact form.<span></span>
+            </p>
+          </div>
+          <div class="section__gallery gallery" id="galerie"><a class="glightbox gallery__wrap" href="./img/private_evt__gallery_1@2x.jpg">
+              <div class="gallery__img image">
+                <picture>
+                  <source type="image/webp" srcset="./img/private_evt__gallery_1@1x.webp 1x, ./img/private_evt__gallery_1@2x.webp 2x"/><img class="lazyload" src="img/private_evt__gallery_1@1x.jpg" srcset="./img/private_evt__gallery_1@2x.jpg 2x" alt="our restaurant" width="360" height="360" loading="lazy"/>
+                </picture>
+              </div></a><a class="glightbox gallery__wrap" href="./img/private_evt__gallery_2@2x.jpg">
+              <div class="gallery__img image">
+                <picture>
+                  <source type="image/webp" srcset="./img/private_evt__gallery_2@1x.webp 1x, ./img/private_evt__gallery_2@2x.webp 2x"/><img class="lazyload" src="img/private_evt__gallery_2@1x.jpg" srcset="./img/private_evt__gallery_2@2x.jpg 2x" alt="our restaurant through the glass of the fireplace" width="360" height="360" loading="lazy"/>
+                </picture>
+              </div></a><a class="glightbox gallery__wrap" href="./img/private_evt__gallery_3@2x.jpg">
+              <div class="gallery__img image">
+                <picture>
+                  <source type="image/webp" srcset="./img/private_evt__gallery_3@1x.webp 1x, ./img/private_evt__gallery_3@2x.webp 2x"/><img class="lazyload" src="img/private_evt__gallery_3@1x.jpg" srcset="./img/private_evt__gallery_3@2x.jpg 2x" alt="hall for special occasions" width="360" height="360" loading="lazy"/>
+                </picture>
+              </div></a><a class="glightbox gallery__wrap" href="./img/private_evt__gallery_4@2x.jpg">
+              <div class="gallery__img image">
+                <picture>
+                  <source type="image/webp" srcset="./img/private_evt__gallery_4@1x.webp 1x, ./img/private_evt__gallery_4@2x.webp 2x"/><img class="lazyload" src="img/private_evt__gallery_4@1x.jpg" srcset="./img/private_evt__gallery_4@2x.jpg 2x" alt="hall for cozy evenings" width="360" height="360" loading="lazy"/>
+                </picture>
+              </div></a>
+          </div>
+        </section>
+        <section class="section section--contacts" id="contact" data-section="true">
+          <div class="section__wrap container">
+            <div class="section__box info">
+              <h2 class="info__title underline">CONTACT</h2>
+              <p class="info__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.</p>
+            </div>
+            <div class="section__form form form--contact">
+              <form method="POST">
+                <div class="placeholder form__field">
+                  <input id="contact_name" type="text" name="name"></input>
+                  <label for="contact_name">Name</label>
+                </div>
+                <div class="placeholder form__field">
+                  <input id="contact_email" type="email" name="email"></input>
+                  <label for="contact_email">Email</label>
+                </div>
+                <div class="placeholder form__field">
+                  <input id="contact_phone" type="text" name="phone"></input>
+                  <label for="contact_phone">Phone</label>
+                </div>
+                <div class="placeholder form__field form__field--textarea">
+                  <textarea id="contact_message" name="message"></textarea>
+                  <label for="contact_message">Message</label>
+                </div>
+                <div class="form__box">
+                  <address class="form__text form__text--icon form__text--address">5th London Boulevard, U.K.</address>
+                  <p class="form__text form__text--icon form__text--phone">+40 729 131 637/+40 726 458 782</p><a class="form__text form__text--mail" href="mailto:office@mindblister.com">
+                    <svg width="23" height="26">
+                      <use xlink:href="./img/sprite.svg#icon_mail"></use>
+                    </svg>office@mindblister.com</a>
+                </div>
+                <button type="submit">SEND MESSAGE
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+        <section class="section section--map" id="page_map" data-section="true">
+          <div class="section__map" id="index_map"></div>
+        </section>
+      </main>
+      <footer class="footer" id="footer_page" data-section="true">
+        <div class="footer__wrap container">
+          <p class="footer__content">&copy;&nbsp;Copyright <span>Mindblister</span> 2019</p>
+        </div>
+      </footer>
+    </div>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

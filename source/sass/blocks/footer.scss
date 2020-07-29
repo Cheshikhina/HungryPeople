@@ -1,3 +1,31 @@
 .footer {
-  flex: 0 0 auto;
+  @include flex_center;
+  min-height: 100px;
+  background-color: rgba($black, 0.9);
+  color: rgba($white, 0.5);
+  padding: 40px 0;
 }
+
+.footer__wrap {
+  @include flex_center(1);
+  @include font($fs_12, $lh_12);
+  height: 100%;
+
+  span {
+    font-weight: 700;
+  }
+}
+
+.footer__content {
+  margin: 0;
+  padding-top: 5px;
+}
+
+// @media (min-width: $no_mobile) {
+.footer--animated {
+  .footer__content {
+      animation: fade_bottom $duration_07 $duration_03 both;
+  }
+}
+
+// }

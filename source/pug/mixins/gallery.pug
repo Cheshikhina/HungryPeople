@@ -1,0 +1,4 @@
+mixin gallery(data)
+	each key in data.img
+		a(href='./img/' + key.name + '@2x.' + key.type class=data.class+' gallery__wrap')
+			+img(key, 'gallery')

@@ -1,0 +1,27 @@
+mixin page_header(data, isBig=false)
+	.container.header__inner
+		nav.header__nav
+			.header__nav_inner
+				+links(data.headerNavLinks.left, true)
+			.header__nav_img
+				+img(data.logoLink)
+			.header__nav_inner
+				+links(data.headerNavLinks.right, true)
+
+		if isBig
+			.header__box
+				.header__time= data.blockMiddle.time
+				.header__middle
+					p.header__middle_subtitle= data.blockMiddle.subtitle
+					h1.header__middle_title.underline.underline--big= data.blockMiddle.title
+					.header__middle_controls
+						a(href=`#${data.blockMiddle.btnName.href}`).button.header__middle_btn= data.blockMiddle.btnName.name
+						.header__middle_search
+							+form(data.blockMiddle.form).header__middle_field
+					.header__middle_scroll
+						a(href='#about_us' aria-label='scroll down' data-anchor='true').header__scroll
+							span
+
+				.header__socials
+					+links(data.blockMiddle.socialSvg, false, true)
+

@@ -1,0 +1,19 @@
+.underline {
+  position: relative;
+  padding-bottom: 25px;
+
+  &::after {
+    @include before;
+    width: 60px;
+    height: 5px;
+    border-radius: 50px;
+    background-color: $accent;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+}
+
+.underline--big {
+  padding-bottom: 35px;
+}

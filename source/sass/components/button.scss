@@ -1,15 +1,33 @@
 .button {
   @include button;
+  @include flex_center(1);
+  @include font($fs_12, $lh_20);
+  width: 100%;
+  min-height: 60px;
+  padding: 12px 10px 10px;
+  color: currentColor;
+  font-weight: 700;
+  background-color: $accent;
+  text-transform: uppercase;
+  border: 1px solid $accent;
+  border-radius: $br_05;
   transition: $transition;
-
-  &:active {
-    opacity: $opacity;
-  }
 }
 
-@media (min-width: $no_mobile) {
+// @media (min-width: $no_mobile) {
 
   .button:hover,
   .button:focus {
+    background-color: $hover;
+    border: 1px solid currentColor;
+    border-top: 1px solid $hover;
+    border-left: 1px solid $hover;
   }
-}
+
+  .button:active {
+    background-color: $active;
+    border: 1px solid currentColor;
+    border-top: 1px solid $active;
+    border-left: 1px solid $active;
+  }
+// }

@@ -1,0 +1,22 @@
+.tick {
+  &::after {
+    @include before;
+    width: 40px;
+    height: 40px;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url("../img/arrow.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-origin: center;
+    background-size: 13px 9px;
+    transition: transform $duration_03;
+  }
+}
+
+.tick:focus-within {
+  &::after {
+    transform: translateY(-50%) rotate(180deg);
+  }
+}

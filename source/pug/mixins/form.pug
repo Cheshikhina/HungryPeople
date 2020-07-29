@@ -1,0 +1,33 @@
+mixin form(data, mixin=false)
+	form(method=data.method)
+		each field in data.fields
+			if (field.search)
+				div(class!=attributes.class)
+					label(for=field.prefix+field.id)= field.placeholder
+					#{field.tag}(id=field.prefix+field.id type=field.type name=field.id)
+			else
+				if (field.tag == 'select')
+					div(class='tick placeholder form__field form__field--select')
+						+select(field)
+						label(for=field.prefix+field.id)= field.placeholder
+				else
+					if (field.tag == 'textarea')
+						div(class='placeholder form__field form__field--textarea')
+							#{field.tag}(id=field.prefix+field.id type=field.type name=field.id)
+							label(for=field.prefix+field.id)= field.placeholder
+					if field.tag == 'input'
+						div(class='placeholder form__field')
+							#{field.tag}(id=field.prefix+field.id type=field.type name=field.id)
+							label(for=field.prefix+field.id)= field.placeholder
+
+
+
+		if (data.contacts)
+			div(class='form__box')
+				address.form__text.form__text--icon.form__text--address= data.contacts.address
+				p.form__text.form__text--icon.form__text--phone= data.contacts.phone
+				a(class='form__text form__text--mail' href=`mailto:${data.contacts.email}`)
+					+svg(data.contacts.email_svg.width, data.contacts.email_svg.height, data.contacts.email_svg.name)
+					| #{data.contacts.email}
+
+		+button(data.btn)

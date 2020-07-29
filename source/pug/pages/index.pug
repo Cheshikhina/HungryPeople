@@ -1,0 +1,27 @@
+extends ../templates/layout.pug
+
+include ../data/index.pug
+
+block meta
+	meta(name='Description' content='Hungry People - the best restaurant')
+	title Hungry People
+
+block header
+	+page_header(data.sectionHeader, true)
+
+block content
+	.header.header--sticky
+		+page_header(data.sectionHeader)
+
+	+section(data.sectionAboutUs).container
+	+section(data.sectionOurTeam).section--reverse.section--team
+	+section(data.sectionBooking, 'booking').section--booking
+	+section(data.sectionSpecialties).section--specialties
+	+section(data.sectionMenu).section--menu
+	+section(data.sectionPrivateEvents).section--events
+	+section(data.sectionContacts).section--contacts
+	section(id='page_map' data-section='true').section.section--map
+		+map(data.sectionMap)
+
+block footer
+	+page_footer(data.sectionFooter)

@@ -1,0 +1,4 @@
+mixin select(data)
+	#{data.tag}(id=data.prefix+data.id name=data.id data-name=data.placeholder)
+		each val, index in data.option
+			option(value=index+1)= val

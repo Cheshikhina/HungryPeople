@@ -1,0 +1,20 @@
+mixin tabs(data, name, currency)
+	- var classSec = 'section';
+	div(class=classSec+'__tab')
+		div(class=classSec+'__tab_links tab_links')
+			div(class='swiper-wrapper tab_links__inner')
+				each key in data.links
+					a(href='#' class='tab_links__item swiper-slide' data-tabs=name)
+						h3= key
+		div(class=classSec+'__tab_contents tab_contents')
+			each val in data.links
+				-var value = val
+					div(class='tab_contents__list tab_contents__list--active' data-content=name)
+						each val in data[value]
+							div(class='tab_contents__item')
+								div.tab_contents__dots
+									h4.tab_contents__title= val.title
+									p.tab_content__price_text
+										span.tab_contents__price= val.price
+										| &nbsp;#{currency}
+								p.tab_contents__text= val.text

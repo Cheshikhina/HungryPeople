@@ -1,0 +1,72 @@
+mixin section(data, classForm)
+	- var classSection = 'section';
+	section(class=classSection id=data.id data-section='true' class!=attributes.class)
+
+		div(class=classSection+'__wrap container')
+			if !data.head && !data.footer
+				if data.slider
+					+slider(data.slider, true)
+				else
+					if data.blockText && data.tabs
+						div(class=classSection+'__box info')
+							+textBlock(data.blockText, 'info', true)
+						+tabs(data.tabs, data.id, data.currency)
+					else
+						if data.blockText && data.blockImg
+							div(class=classSection+'__box info')
+								+textBlock(data.blockText, 'info', true)
+								if data.blockText.form
+									+form(data.blockText.form)
+						else
+							div(class=classSection+'__box info')
+								+textBlock(data.blockText, 'info', true)
+							if data.form
+								div(class=classSection+'__form form form--'+ data.id)
+									+form(data.form)
+
+					if data.blockImg
+						+img(data.blockImg, classSection)
+
+			else if data.mainPhoto && data.gallery
+				if data.head
+					h2(class=classSection+'__head')= data.head
+
+				div(class=classSection+'__photos')
+					+img(data.mainPhoto, classSection, true)
+
+				if data.footer
+					p(class=classSection+'__footer')
+						each val, key in data.footer
+							| #{key}
+							span= val
+			else
+				if data.head
+					h2(class=classSection+'__head')= data.head
+
+				if data.slider
+					+slider(data.slider)
+				else
+					div(class=classSection+'__inner')
+						if data.blockText && data.tabs
+							div(class=classSection+'__box info')
+								+textBlock(data.blockText, 'info')
+							+tabs(data)
+						else
+							if data.blockText
+								div(class=classSection+'__box info')
+									+textBlock(data.blockText, 'info')
+									if data.blockText.form
+										div(class='form form--'+classForm+' info__form')
+											+form(data.blockText.form)
+
+							if data.blockImg
+								+img(data.blockImg, classSection)
+
+				if data.footer
+					p(class=classSection+'__footer')
+						each val, key in data.footer
+							| #{key}
+							span= val
+		if data.mainPhoto && data.gallery
+			div(class=classSection+'__gallery gallery' id=data.gallery.id)
+				+gallery(data.gallery)

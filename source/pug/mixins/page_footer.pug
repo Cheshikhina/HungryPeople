@@ -1,0 +1,7 @@
+mixin page_footer(data)
+	footer(id=data.id data-section='true').footer
+		.footer__wrap.container
+			p.footer__content
+				| &copy;&nbsp;#{data.copyright}
+				span= data.textBold
+				| #{data.year}

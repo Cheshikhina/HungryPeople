@@ -1,0 +1,301 @@
+block variables
+	-
+		const data = {
+			sectionHeader: {
+				id:'home',
+				headerNavLinks: {
+					left: {
+						'HOME': 'home',
+						'ABOUT': 'about_us',
+						'TEAM': 'team',
+						'BOOKING': 'booking',
+					},
+					right: {
+						'MENU': 'menu',
+						'GALERIE': 'galerie',
+						'EVENTS': 'events',
+						'CONTACT': 'contact',
+					},
+				},
+				logoLink: {
+					name: 'helm',
+					type: 'svg',
+					width: 150,
+					height: 150,
+					alt: 'Logotype'
+				},
+				blockMiddle: {
+					time: 'Mon - Fri: 8PM - 10PM, Sat - Sun: 8PM - 3AM',
+					socialSvg: [{label: 'facebook', width: 20, height: 20, name: 'facebook'},{label: 'twitter', width: 20, height: 20, name: 'twitter'},{label: 'instagram', width: 20, height: 20, name: 'instagram'}],
+					subtitle: 'RESTAURANT',
+					title: 'hungry people',
+					btnName: {
+						name: 'BOOK TABLE',
+						href: 'book_link'
+					},
+					form: {
+						method: 'get',
+						fields: [{
+							tag: 'input',
+							type: 'search',
+							prefix: 'header_',
+							id: 'search',
+							placeholder: 'EXPLORE',
+							search: true,
+						}],
+						btn: {
+							label: 'search',
+							type: 'submit',
+							svg: {
+								width: 25,
+								height: 25,
+								name: 'search'
+							}
+						}
+					}
+				},
+			},
+			sectionAboutUs: {
+				id: 'about_us',
+				blockText: {
+					title: 'about us',
+					textMain: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.',
+					text: 'Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.',
+				},
+				blockImg: {
+					type: 'jpg',
+					name: 'about_us',
+					width: 475,
+					height: 475,
+					alt: 'our restaurant through the glass of the fireplace',
+					modificator: 'border--right'
+				}
+			},
+			sectionOurTeam: {
+				id: 'team',
+				head: 'OUR TEAM',
+				blockText: {
+					title: 'MASTER CHEF',
+					textMain: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.',
+					text: 'Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.',
+				},
+				blockImg: {
+					type: 'jpg',
+					name: 'our_team',
+					width: 475,
+					height: 475,
+					alt: 'our chef at work'
+				},
+			},
+			sectionBooking: {
+				id: 'booking',
+				blockText: {
+					title: 'book a table',
+					form: {
+						method: 'POST',
+						fields: [{
+							tag: 'input',
+							type: 'text',
+							prefix: 'booking_',
+							id: 'name',
+							placeholder: 'Name',
+						},
+						{
+							tag: 'input',
+							type: 'email',
+							prefix: 'booking_',
+							id: 'email',
+							placeholder: 'Email',
+						},
+						{
+							tag: 'input',
+							type: 'text',
+							prefix: 'booking_',
+							id: 'phone',
+							placeholder: 'Phone',
+						},
+						{
+							tag: 'select',
+							prefix: 'booking_',
+							id: 'people',
+							placeholder: 'People',
+							option: [1, 2, 3, 4, 5]
+						},
+						{
+							tag: 'input',
+							type: 'date',
+							prefix: 'booking_',
+							id: 'date',
+							placeholder: 'Date (mm/dd)',
+						},
+						{
+							tag: 'select',
+							prefix: 'booking_',
+							id: 'time',
+							placeholder: 'Time',
+							option: ['8:00PM-8:30PM', '8:30PM-9:00PM', '9:00PM-9:30PM', '9:30PM-10:00PM']
+						}],
+						btn: {
+							text: 'BOOK NOW',
+							type: 'submit',
+						}
+					},
+				},
+				blockImg: {
+					type: 'jpg',
+					name: 'booking',
+					width: 475,
+					height: 475,
+					alt: 'antique clock',
+					modificator: 'border--right'
+				},
+				footer: {
+					'Mon - Fri: ': '8PM - 10PM',
+					', Sat - Sun: ': '8PM - 3AM',
+					', Phone: ': '+40 729 131 637/+40 726 458 782'
+				}
+			},
+			sectionSpecialties: {
+				id: 'specialties',
+				head: 'specialties',
+				slider: {
+					class: 'slider_specialties',
+					slides: [{blockText:{title: 'pancakes', textMain: 'Lorem ipsum dolor sit amet.', text: 'Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.'}, blockImg: {type: 'jpg', name: 'specialties_2', width: 475, height: 475, alt: 'amazing dish prepared by our experts', modificator: 'border--right'}},{blockText:{title: 'chocolate pancakes', textMain: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.', text: 'Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.'}, blockImg: {type: 'jpg', name: 'specialties_1', width: 475, height: 475, alt: 'amazing dish prepared by our experts'}},{blockText:{title: 'chocolate', textMain: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.', text: 'Integer ullamcorper neque eu purus euismod.'}, blockImg: {type: 'jpg', name: 'specialties_3', width: 475, height: 475, alt: 'amazing dish prepared by our experts', modificator: 'border--right'}}]
+				}
+			},
+			sectionMenu: {
+				id: 'menu',
+				blockText: {
+					title: 'DELICIOUS MENU',
+					textMain: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.',
+				},
+				currency: 'USD',
+				tabs: {
+					links: ['pizza', 'soupe', 'pasta', 'wine', 'beer', 'drinks'],
+					pizza: [{title: 'PIZZA QUATRO STAGIONI', text: 'Integer ullamcorper neque eu purus euismod', price: '55.68'},{title: 'PIZZA QUATRO STAGIONI', text: 'Integer ullamcorper neque eu purus euismod', price: '55.68'},{title: 'PIZZA QUATRO STAGIONI', text: 'Integer ullamcorper neque eu purus euismod', price: '55.68'},{title: 'PIZZA QUATRO STAGIONI', text: 'Integer ullamcorper neque eu purus euismod', price: '55.68'},{title: 'PIZZA QUATRO STAGIONI', text: 'Integer ullamcorper neque eu purus euismod', price: '55.68'},{title: 'PIZZA QUATRO STAGIONI', text: 'Integer ullamcorper neque eu purus euismod', price: '55.68'},{title: 'PIZZA QUATRO STAGIONI', text: 'Integer ullamcorper neque eu purus euismod', price: '55.68'},{title: 'PIZZA QUATRO STAGIONI', text: 'Integer ullamcorper neque eu purus euismod', price: '55.68'},{title: 'PIZZA QUATRO STAGIONI', text: 'Integer ullamcorper neque eu purus euismod', price: '55.68'},{title: 'PIZZA QUATRO STAGIONI', text: 'Integer ullamcorper neque eu purus euismod', price: '55.68'},{title: 'PIZZA QUATRO STAGIONI', text: 'Integer ullamcorper neque eu purus euismod', price: '55.68'},{title: 'PIZZA QUATRO STAGIONI', text: 'Integer ullamcorper neque eu purus euismod', price: '55.68'},{title: 'PIZZA QUATRO STAGIONI', text: 'Integer ullamcorper neque eu purus euismod', price: '55.68'},{title: 'PIZZA QUATRO STAGIONI', text: 'Integer ullamcorper neque eu purus euismod', price: '55.68'},{title: 'PIZZA QUATRO STAGIONI', text: 'Integer ullamcorper neque eu purus euismod', price: '55.68'},{title: 'PIZZA QUATRO STAGIONI', text: 'Integer ullamcorper neque eu purus euismod', price: '55.68'},{title: 'PIZZA QUATRO STAGIONI', text: 'Integer ullamcorper neque eu purus euismod', price: '55.68'},{title: 'PIZZA QUATRO STAGIONI', text: 'Integer ullamcorper neque eu purus euismod', price: '55.68'},{title: 'PIZZA QUATRO STAGIONI', text: 'Integer ullamcorper neque eu purus euismod', price: '55.68'},{title: 'PIZZA QUATRO STAGIONI', text: 'Integer ullamcorper neque eu purus euismod', price: '55.68'},{title: 'PIZZA QUATRO STAGIONI', text: 'Integer ullamcorper neque eu purus euismod', price: '55.68'}],
+					soupe: [{title: 'SOUPE QUATRO STAGIONI', text: 'Integer ullamcorper', price: '33.2'},{title: 'SOUPE QUATRO STAGIONI', text: 'Integer ullamcorper', price: '33.2'},{title: 'SOUPE QUATRO STAGIONI', text: 'Integer ullamcorper', price: '33.2'}],
+					pasta: [{title: 'PASTA', text: 'pasta', price: '50'},{title: 'PASTA', text: 'pasta', price: '50'},{title: 'PASTA', text: 'pasta', price: '50'},{title: 'PASTA', text: 'pasta', price: '50'},{title: 'PASTA', text: 'pasta', price: '50'},{title: 'PASTA', text: 'pasta', price: '50'},{title: 'PASTA', text: 'pasta', price: '50'},{title: 'PASTA', text: 'pasta', price: '50'},{title: 'PASTA', text: 'pasta', price: '50'},{title: 'PASTA', text: 'pasta', price: '50'},{title: 'PASTA', text: 'pasta', price: '50'},{title: 'PASTA', text: 'pasta', price: '50'},{title: 'PASTA', text: 'pasta', price: '50'}],
+					wine: [{title: 'WINE', text: 'purus euismod', price: '105.99'},{title: 'WINE', text: 'purus euismod', price: '105.99'},{title: 'WINE', text: 'purus euismod', price: '105.99'},{title: 'WINE', text: 'purus euismod', price: '105.99'},{title: 'WINE', text: 'purus euismod', price: '105.99'},{title: 'WINE', text: 'purus euismod', price: '105.99'},{title: 'WINE', text: 'purus euismod', price: '105.99'},{title: 'WINE', text: 'purus euismod', price: '105.99'},{title: 'WINE', text: 'purus euismod', price: '105.99'},{title: 'WINE', text: 'purus euismod', price: '105.99'},{title: 'WINE', text: 'purus euismod', price: '105.99'},{title: 'WINE', text: 'purus euismod', price: '105.99'},{title: 'WINE', text: 'purus euismod', price: '105.99'},{title: 'WINE', text: 'purus euismod', price: '105.99'},{title: 'WINE', text: 'purus euismod', price: '105.99'},{title: 'WINE', text: 'purus euismod', price: '105.99'},{title: 'WINE', text: 'purus euismod', price: '105.99'},{title: 'WINE', text: 'purus euismod', price: '105.99'},{title: 'WINE', text: 'purus euismod', price: '105.99'},{title: 'WINE', text: 'purus euismod', price: '105.99'},{title: 'WINE', text: 'purus euismod', price: '105.99'}],
+					beer: [{title: 'BEER QUATRO STAGIONI', text: 'Integer ullamcorper neque eu purus euismod', price: '55.68'},{title: 'BEER QUATRO STAGIONI', text: 'Integer ullamcorper neque eu purus euismod', price: '55.68'},{title: 'BEER QUATRO STAGIONI', text: 'Integer ullamcorper neque eu purus euismod', price: '55.68'},{title: 'BEER QUATRO STAGIONI', text: 'Integer ullamcorper neque eu purus euismod', price: '55.68'},{title: 'BEER QUATRO STAGIONI', text: 'Integer ullamcorper neque eu purus euismod', price: '55.68'},{title: 'BEER QUATRO STAGIONI', text: 'Integer ullamcorper neque eu purus euismod', price: '55.68'},{title: 'BEER QUATRO STAGIONI', text: 'Integer ullamcorper neque eu purus euismod', price: '55.68'}],
+					drinks: [{title: 'DRINKS', text: 'Integer ullamcorper neque eu purus euismod', price: '10'}],
+				},
+			},
+			sectionPrivateEvents: {
+				id: 'events',
+				head: 'PRIVATE EVENTS',
+				mainPhoto: [
+					{
+						title: 'weddings',
+						type: 'jpg',
+						width: 475,
+						height: 475,
+						name: 'private_evt_1',
+						alt: 'wedding rings'
+					},{
+						title: 'corporate parties',
+						type: 'jpg',
+						width: 475,
+						height: 475,
+						name: 'private_evt_2',
+						alt: 'clinking glasses at an event'
+					},
+				],
+				footer: {
+					'For private events please call: ': ' +40 729 131 637/+40 726 458 782 ',
+					'or use the contact form.': '',
+				},
+				gallery: {
+					id: 'galerie',
+					dataAtr: 'gallery_1',
+					class: 'glightbox',
+					img: [
+						{
+							type: 'jpg',
+							name: 'private_evt__gallery_1',
+							alt: 'our restaurant',
+							width: 360,
+							height: 360,
+						},{
+							type: 'jpg',
+							name: 'private_evt__gallery_2',
+							alt: 'our restaurant through the glass of the fireplace',
+							width: 360,
+							height: 360,
+						},{
+							type: 'jpg',
+							name: 'private_evt__gallery_3',
+							alt: 'hall for special occasions',
+							width: 360,
+							height: 360,
+						},{
+							type: 'jpg',
+							name: 'private_evt__gallery_4',
+							alt: 'hall for cozy evenings',
+							width: 360,
+							height: 360,
+						},
+					],
+				}
+			},
+			sectionContacts: {
+				id: 'contact',
+				blockText: {
+					title: 'CONTACT',
+					textMain: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.',
+				},
+				form: {
+					method: 'POST',
+					fields: [{
+						tag: 'input',
+						type: 'text',
+						prefix: 'contact_',
+						id: 'name',
+						placeholder: 'Name',
+					},
+					{
+						tag: 'input',
+						type: 'email',
+						prefix: 'contact_',
+						id: 'email',
+						placeholder: 'Email',
+					},
+					{
+						tag: 'input',
+						type: 'text',
+						prefix: 'contact_',
+						id: 'phone',
+						placeholder: 'Phone',
+					},
+					{
+						tag: 'textarea',
+						prefix: 'contact_',
+						id: 'message',
+						placeholder: 'Message',
+					}],
+					btn: {
+						text: 'SEND MESSAGE',
+						type: 'submit',
+					},
+					contacts: {
+						address: '5th London Boulevard, U.K.',
+						phone: '+40 729 131 637/+40 726 458 782',
+						email: 'office@mindblister.com',
+						email_svg: {
+							width: 23,
+							height: 26,
+							name: 'mail'
+						}
+					}
+				},
+			},
+			sectionMap: {
+				img: 'map',
+				id: 'index_map',
+			},
+			sectionFooter: {
+				id: 'footer_page',
+				copyright: 'Copyright ',
+				textBold: 'Mindblister',
+				year: ' 2019',
+			}
+		}

@@ -1,0 +1,231 @@
+.form {
+  display: block;
+  color: $input;
+
+  form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  [type="submit"] {
+    @include button;
+    @include flex_center(1);
+    @include font($fs_12, $lh_20);
+    width: 100%;
+    min-height: 60px;
+    padding: 12px 10px 10px;
+    color: $white;
+    font-weight: 700;
+    background-color: $accent;
+    text-transform: uppercase;
+    border: 1px solid $accent;
+    border-radius: $br_05;
+    transition: $transition;
+  }
+}
+
+.form__field {
+  width: 100%;
+  height: 60px;
+
+  input,
+  select,
+  textarea {
+    @include font($fs_14, $lh_19);
+    display: block;
+    width: 100%;
+    height: 60px;
+    padding: 21px 20px 18px;
+    background-color: $bacground;
+    color: rgba($input, 0);
+    font-weight: 700;
+    border: none;
+    -webkit-appearance: none;
+    border-radius: $br_05;
+    outline: 0;
+    resize: none;
+    cursor: pointer;
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: inset 0 0 0 100px $bacground !important;
+      -webkit-text-fill-color: rgba($input, 1) !important;
+      color: rgba($input, 1) !important;
+    }
+  }
+
+  [type="date"] {
+
+    // &::-webkit-datetime-edit,
+    // &::-webkit-datetime-edit-fields-wrapper,
+    // &::-webkit-datetime-edit-text,
+    // &::-webkit-datetime-edit-month-field,
+    // &::-webkit-datetime-edit-day-field,
+    // &::-webkit-datetime-edit-year-field,
+    &::-webkit-inner-spin-button,
+    &::-webkit-calendar-picker-indicator {
+      display: none;
+    }
+  }
+
+  label {
+    @include font($fs_14, $lh_19);
+    display: inline-flex;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 21px 20px 18px;
+    color: $input;
+    cursor: pointer;
+    transition: $transition;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    color: rgba($input, 1);
+  }
+}
+
+.form__box {
+  @include flex_center;
+  @include font($fs_12, $lh_12);
+  flex-wrap: wrap;
+  width: calc(50% - 5px);
+  margin-right: 10px;
+}
+
+.form__text {
+  padding-left: 23px;
+
+  +.form__text {
+    margin-left: 15px;
+  }
+}
+
+.form__text--icon {
+  position: relative;
+
+  &::before {
+    @include before;
+    width: 23px;
+    height: 26px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.form__text--phone {
+  margin: 0;
+
+  &::before {
+    background-image: url("../img/phone.svg");
+  }
+}
+
+.form__text--address {
+
+  font-style: normal;
+
+  &::before {
+    background-image: url("../img/pin.svg");
+  }
+}
+
+.form__text--mail {
+  position: relative;
+  color: currentColor;
+  transition: color $duration_03;
+
+  svg {
+    position: absolute;
+    top: calc(50% + 2px);
+    left: 0;
+    transform: translateY(-50%);
+    transition: fill $duration_03;
+  }
+}
+
+.form--booking {
+  margin-top: 5px;
+
+  form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    padding: 0 10px;
+  }
+
+  [type="submit"] {
+    grid-column: span 2;
+  }
+}
+
+.form--contact {
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    [type="submit"] {
+      width: calc(50% - 5px);
+    }
+
+    textarea {
+      height: 100%;
+    }
+  }
+
+  .form__field {
+    width: calc(33.33% - 6.67px);
+    margin-bottom: 10px;
+  }
+
+  .form__field--textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    min-height: 120px;
+
+    label {
+      top: 30px;
+    }
+  }
+}
+
+@media (min-width: $no_mobile) {
+
+  .form [type="submit"]:hover,
+  .form [type="submit"]:focus {
+    background-color: $hover;
+    border: 1px solid $input;
+    border-top: 1px solid $hover;
+    border-left: 1px solid $hover;
+  }
+
+  .form [type="submit"]:active {
+    background-color: $active;
+    border: 1px solid $input;
+    border-top: 1px solid $active;
+    border-left: 1px solid $active;
+  }
+
+  .form__text--mail:hover,
+  .form__text--mail:focus {
+    color: $accent;
+
+    svg {
+      fill: $hover;
+    }
+  }
+
+  .form__text--mail:active {
+    opacity: $opacity;
+
+    svg {
+      fill: $active;
+    }
+  }
+}

@@ -2,21 +2,68 @@
 $mobile_min: 320px;
 $mobile_max: 768px;
 $tablet_max: 1024px;
-$desktop_max: 1200px;
+$desktop_max: 1280px;
 $no_mobile: 769px;
 
 // color scheme
 $white: #ffffff;
 $black: #000000;
+$dark: rgba(0, 0, 0, 0.9);
+$input: rgba(51, 51, 51, 0.5);
+$bacground: #E5E5E5;
+$border: rgba(255, 255, 255, 0.2);
+$bulet: rgba(255, 255, 255, 0.5);
+$accent: #E8C300;
+$hover: darken($accent, 5%);
+$active: darken($accent, 15%);
+$shadow_br: 0 0 100px 10px $black;
+$shadow_br_opacity: 0 0 100px rgba($black, 0.5);
+$shadow_img: 0 0 50px $black;
+
+$background_gradient: linear-gradient(90deg, #230F00 50%, transparent 0),
+linear-gradient(#050302 50%, transparent 0);
+// #050302
+// #230F00
+// #443C2E
 
 // fonts size
-$main_font: 16px;
+$main_font: 16;
+
+$fs_12: 12;
+$fs_14: 14;
+$fs_16: 16;
+$fs_18: 18;
+$fs_24: 24;
+$fs_36: 36;
+$fs_96: 96;
+
+$lh_12: 12;
+$lh_14: 14;
+$lh_18: 18;
+$lh_19: 19;
+$lh_20: 20;
+$lh_24: 24;
+$lh_28: 28;
+$lh_48: 48;
 
 // another
 $transition: all 0.3s;
+$duration_03: 0.3s;
+$duration_07: 0.7s;
+$duration_09: 0.9s;
+$duration_15: 1.5s;
+$duration_2: 2s;
+$duration_3: 3s;
+$duration_4: 4s;
+$duration_6: 6s;
 $opacity: 0.87;
-$placeholders_dots: "-moz-placeholder", "-webkit-input-placeholder", "placeholder";
-$placeholders_dot: "-moz-placeholder", "-ms-input-placeholder";
+$br: 1px solid $border;
+$br_05: 5px;
+$placeholders_dots: "-moz-placeholder",
+"-webkit-input-placeholder",
+"placeholder";
+$placeholders_dot: "-moz-placeholder",
+"-ms-input-placeholder";
 
 // @each $placeholder in $placeholders_dots {
 //   &::#{$placeholder} {

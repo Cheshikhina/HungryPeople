@@ -16,5 +16,23 @@
     top: 0;
     transform: translateY(-50%);
     left: 10px;
+    color: $accent;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+  }
+
+  &.placeholder--current {
+
+    input,
+    textarea,
+    select {
+      color: $dark;
+    }
+
+    label {
+      top: 0 !important;
+      transform: translateY(-50%);
+      left: 10px;
+    }
   }
 }

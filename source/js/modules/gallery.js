@@ -1,7 +1,7 @@
 import GLightbox from 'glightbox';
 
-// const gallery = () => {
-if (document.querySelectorAll('.glightbox ')) {
+const gallery = () => {
+if (document.querySelectorAll('.glightbox')) {
   const lightbox = new GLightbox({
     // touchNavigation: true,
     slideEffect: 'zoom',
@@ -11,6 +11,6 @@ if (document.querySelectorAll('.glightbox ')) {
   });
 }
 
-// };
+};
 
-// export default gallery;
+export default gallery;

@@ -13,15 +13,16 @@ const selectChoice = (selector) => {
         containerInner: 'choices__inner',
       },
     });
-    // .showDropdown(' ');
 
-    // select.addEventListener(
-    // 'showDropdown',
-    // function (evt) {
-    //   select.
-    // }
-    // );
+    select.addEventListener('change', function (evt) {
+      const selectWrap = evt.target.parentNode.parentNode.parentNode;
+      if (evt.target.value == 1 && selectWrap.classList.contains('placeholder--current')) {
+        selectWrap.classList.remove('placeholder--current');
+      } else {
+        selectWrap.classList.add('placeholder--current');
+      }
+    });
   });
-
 };
+
 export default selectChoice;

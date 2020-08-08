@@ -2,6 +2,16 @@ const animationSections = () => {
   const sections = document.querySelectorAll('[data-section="true"]'),
     links = document.querySelectorAll('.section__photo_link');
 
+  function toggleBlock(el, isShowBlock = false) {
+    if (el) {
+      if (isShowBlock) {
+        el.style.opacity = 1;
+      } else {
+        el.style.opacity = 0;
+      }
+    }
+  }
+
   function animationSection(block, isShow = true) {
     if (isShow) {
       if (block.classList.contains('footer')) {
@@ -17,17 +27,13 @@ const animationSections = () => {
       if (window.getComputedStyle(block).backgroundImage == 'none') {
         block.style.opacity = 1;
       } else {
-        if (block.querySelector('.container')) {
-          block.querySelector('.container').style.opacity = 1;
-        }
-        if (block.querySelector('.section__gallery')) {
-          block.querySelector('.section__gallery').style.opacity = 1;
-        }
+        toggleBlock(block.querySelector('.container'), true);
+        toggleBlock(block.querySelector('.section__gallery'), true);
+        toggleBlock(block.querySelector('.section__map'), true);
       }
       if (block.querySelector('.slider_specialties__pagination')) {
         block.querySelector('.slider_specialties__pagination').classList.add('slider_specialties__pagination--animated');
       }
-
       if (block.querySelectorAll('.section__photo_link')[0]) {
         const photoLinks = block.querySelectorAll('.section__photo_link');
         photoLinks.forEach(link => {
@@ -53,12 +59,9 @@ const animationSections = () => {
       if (window.getComputedStyle(block).backgroundImage == 'none') {
         block.style.opacity = 0;
       } else {
-        if (block.querySelector('.container')) {
-          block.querySelector('.container').style.opacity = 0;
-        }
-        if (block.querySelector('.section__gallery')) {
-          block.querySelector('.section__gallery').style.opacity = 0;
-        }
+        toggleBlock(block.querySelector('.container'));
+        toggleBlock(block.querySelector('.section__gallery'));
+        toggleBlock(block.querySelector('.section__map'));
       }
       if (block.querySelector('.slider_specialties__pagination') && block.querySelector('.slider_specialties__pagination').classList.contains('slider_specialties__pagination--animated')) {
         block.querySelector('.slider_specialties__pagination').classList.remove('slider_specialties__pagination--animated');
@@ -69,6 +72,11 @@ const animationSections = () => {
           link.classList.remove('section__photo_link--animated');
         }
       });
+
+      if (block.querySelector('#booking_date')) {
+        document.querySelector('.flatpickr-calendar').classList.remove('open');
+        document.querySelector('#booking_date').blur();
+      }
     }
   }
 

@@ -4,6 +4,10 @@
   min-height: 100vh;
   padding: 100px 0;
   transition: opacity 0.001s;
+
+  &~.flatpickr-calendar.open {
+    opacity: 0;
+  }
 }
 
 .section__wrap,
@@ -247,6 +251,11 @@
 
   .section__map {
     animation: fade $duration_07 both;
+  }
+
+  &~.flatpickr-calendar.open {
+    opacity: 1;
+    animation: fade_top_form $duration_07 $duration_07 both;
   }
 
   .section__photo_link {

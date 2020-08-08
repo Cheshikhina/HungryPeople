@@ -15,8 +15,6 @@ const label = () => {
   function checkValue(evt) {
     let input = evt.target,
       wrapBlock = input.parentNode;
-    console.log(input);
-    console.log(wrapBlock);
     if (input.value.trim() != '') {
       if (!wrapBlock.classList.contains('placeholder--current')) {
         wrapBlock.classList.add('placeholder--current');

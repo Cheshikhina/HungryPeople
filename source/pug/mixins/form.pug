@@ -7,7 +7,7 @@ mixin form(data, mixin=false)
 					#{field.tag}(id=field.prefix+field.id type=field.type name=field.id)
 			else
 				if (field.tag == 'select')
-					div(class='tick placeholder form__field form__field--select')
+					div(class='placeholder form__field form__field--select')
 						+select(field)
 						label(for=field.prefix+field.id)= field.placeholder
 				else

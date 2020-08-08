@@ -11,6 +11,8 @@ import scroll from './modules/scroll';
 import tab from './modules/tab';
 import map from './modules/map';
 import label from './modules/label';
+import dateInput from './modules/dateInput';
+import selectChoice from './modules/selectChoice';
 
 window.addEventListener('DOMContentLoaded', () => {
   common();
@@ -22,4 +24,6 @@ window.addEventListener('DOMContentLoaded', () => {
   map();
   gallery();
   label();
+  dateInput('#booking_date');
+  selectChoice('.form--booking select');
 });

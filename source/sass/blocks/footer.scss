@@ -2,6 +2,7 @@
   @include flex_center;
   min-height: 100px;
   background-color: rgba($black, 0.9);
+  background-image: linear-gradient(90deg, #000000e6 100%);
   color: rgba($white, 0.5);
   padding: 40px 0;
 }
@@ -19,13 +20,13 @@
 .footer__content {
   margin: 0;
   padding-top: 5px;
+  background-color: transparent;
 }
 
-// @media (min-width: $no_mobile) {
-.footer--animated {
-  .footer__content {
+@media (min-width: $no_mobile) {
+  .footer--animated {
+    .footer__content {
       animation: fade_bottom $duration_07 $duration_03 both;
+    }
   }
 }
-
-// }

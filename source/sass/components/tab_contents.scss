@@ -76,7 +76,7 @@
   }
 }
 
-// @media (min-width: $no_mobile) {
+@media (min-width: $no_mobile) {
 
   .tab_contents__list {
     transform: translateY(-50px) scale(0.5);
@@ -86,4 +86,4 @@
   .tab_contents__list--active {
     transform: translateY(0) scale(1);
   }
-// }
+}

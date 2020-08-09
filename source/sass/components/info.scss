@@ -17,7 +17,7 @@
     @include textBlock;
   }
 
-  // @media (min-width: $no_mobile) {
+  @media (min-width: $no_mobile) {
     .info--animated {
       .info__title {
         animation: fade_top $duration_07 0.1s+$duration_03 both;
@@ -35,4 +35,4 @@
         animation: fade_top_form $duration_07 $duration_07 both;
       }
     }
-  // }
+  }

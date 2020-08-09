@@ -22,9 +22,6 @@ $shadow_img: 0 0 50px $black;
 
 $background_gradient: linear-gradient(90deg, #230F00 50%, transparent 0),
 linear-gradient(#050302 50%, transparent 0);
-// #050302
-// #230F00
-// #443C2E
 
 // fonts size
 $main_font: 16;
@@ -64,18 +61,6 @@ $placeholders_dots: "-moz-placeholder",
 "placeholder";
 $placeholders_dot: "-moz-placeholder",
 "-ms-input-placeholder";
-
-// @each $placeholder in $placeholders_dots {
-//   &::#{$placeholder} {
-//     transition: $transition;
-//   }
-// }
-
-// @each $placeholder in $placeholders_dot {
-//   &:#{$placeholder} {
-//     transition: $transition;
-//   }
-// }
 
 // retina
 $retina_dpi: 144dpi;

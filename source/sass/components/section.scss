@@ -220,120 +220,119 @@
   padding: 0;
 }
 
-// @media (min-width: $no_mobile) {
-.section--animated {
-  animation: fade_background $duration_2 both;
+@media (min-width: $no_mobile) {
+  .section--animated {
+    animation: fade_background $duration_2 both;
 
-  .section__img {
-    animation: flip_left $duration_07 $duration_03 both;
+    .section__img {
+      animation: flip_left $duration_07 $duration_03 both;
+    }
+
+    .section__img::after {
+      animation: border $duration_07 $duration_07+0.1s linear both;
+    }
+
+    .section__head,
+    .section__footer {
+      animation: fade $duration_07 $duration_07+$duration_03 both;
+    }
+
+    .section__tab_links {
+      animation: fade_top_form $duration_07 0.5s both;
+    }
+
+    .section__tab_contents {
+      animation: fade_top_form $duration_07 $duration_07 both;
+    }
+
+    .section__form {
+      animation: fade_top_form $duration_07 $duration_07 both;
+    }
+
+    .section__map {
+      animation: fade $duration_07 both;
+    }
+
+    &~.flatpickr-calendar.open {
+      opacity: 1;
+      animation: fade_top_form $duration_07 $duration_07 both;
+    }
+
+    .section__photo_link {
+      &:nth-child(odd) {
+        .section__photo_subtitle {
+          animation: photos_title_odd $duration_07 $duration_07+0.5s both;
+        }
+      }
+
+      &:nth-child(even) {
+        .section__photo_subtitle {
+          animation: photos_title_even $duration_07 $duration_07+0.5s both;
+        }
+      }
+    }
+
+    @for $i from 0 through 4 {
+      @if ($i % 2==0) {
+        .section__gallery a:nth-child(#{$i}) {
+          animation: flip_left 1s (0.7 + $i * 0.1)+s both;
+        }
+      }
+
+      @else {
+        .section__gallery a:nth-child(#{$i}) {
+          animation: flip_right 1s (0.7 + $i * 0.1)+s both;
+        }
+      }
+    }
   }
 
-  .section__img::after {
-    animation: border $duration_07 $duration_07+0.1s linear both;
+  .section--animated.section--reverse .section__img {
+    animation: flip_right $duration_07 $duration_03 both;
   }
 
-  .section__head,
-  .section__footer {
-    animation: fade $duration_07 $duration_07+$duration_03 both;
+  .section--events {
+    .section__photo_link--animated {
+      &:nth-child(odd) {
+        .section__photo_subtitle {
+          animation: photos_title_odd $duration_07 forwards;
+        }
+      }
+
+      &:nth-child(even) {
+        .section__photo_subtitle {
+          animation: photos_title_even $duration_07 forwards;
+        }
+      }
+
+      .section__img::after {
+        animation: border $duration_07;
+      }
+    }
   }
 
-  .section__tab_links {
-    animation: fade_top_form $duration_07 0.5s both;
-  }
+  .section__photo_link:hover,
+  .section__photo_link:focus {
+    &:nth-child(n) {
+      .section__img::after {
+        animation: border_hover $duration_07 forwards linear;
+      }
+    }
 
-  .section__tab_contents {
-    animation: fade_top_form $duration_07 $duration_07 both;
-  }
-
-  .section__form {
-    animation: fade_top_form $duration_07 $duration_07 both;
-  }
-
-  .section__map {
-    animation: fade $duration_07 both;
-  }
-
-  &~.flatpickr-calendar.open {
-    opacity: 1;
-    animation: fade_top_form $duration_07 $duration_07 both;
-  }
-
-  .section__photo_link {
     &:nth-child(odd) {
       .section__photo_subtitle {
-        animation: photos_title_odd $duration_07 $duration_07+0.5s both;
+        animation: photos_title_odd_hover $duration_07 forwards linear;
       }
     }
 
     &:nth-child(even) {
       .section__photo_subtitle {
-        animation: photos_title_even $duration_07 $duration_07+0.5s both;
+        animation: photos_title_even_hover $duration_07 forwards linear;
       }
     }
   }
 
-  @for $i from 0 through 4 {
-    @if ($i % 2==0) {
-      .section__gallery a:nth-child(#{$i}) {
-        animation: flip_left 1s (0.7 + $i * 0.1)+s both;
-      }
-    }
-
-    @else {
-      .section__gallery a:nth-child(#{$i}) {
-        animation: flip_right 1s (0.7 + $i * 0.1)+s both;
-      }
-    }
+  .section__photo_link:active {
+    opacity: $opacity;
   }
 }
-
-.section--animated.section--reverse .section__img {
-  animation: flip_right $duration_07 $duration_03 both;
-}
-
-.section--events {
-  .section__photo_link--animated {
-    &:nth-child(odd) {
-      .section__photo_subtitle {
-        animation: photos_title_odd $duration_07 forwards;
-      }
-    }
-
-    &:nth-child(even) {
-      .section__photo_subtitle {
-        animation: photos_title_even $duration_07 forwards;
-      }
-    }
-
-    .section__img::after {
-      animation: border $duration_07;
-    }
-  }
-}
-
-.section__photo_link:hover,
-.section__photo_link:focus {
-  &:nth-child(n) {
-    .section__img::after {
-      animation: border_hover $duration_07 forwards linear;
-    }
-  }
-
-  &:nth-child(odd) {
-    .section__photo_subtitle {
-      animation: photos_title_odd_hover $duration_07 forwards linear;
-    }
-  }
-
-  &:nth-child(even) {
-    .section__photo_subtitle {
-      animation: photos_title_even_hover $duration_07 forwards linear;
-    }
-  }
-}
-
-.section__photo_link:active {
-  opacity: $opacity;
-}
-
-// }

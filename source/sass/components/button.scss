@@ -14,7 +14,7 @@
   transition: $transition;
 }
 
-// @media (min-width: $no_mobile) {
+@media (min-width: $no_mobile) {
 
   .button:hover,
   .button:focus {
@@ -30,4 +30,4 @@
     border-top: 1px solid $active;
     border-left: 1px solid $active;
   }
-// }
+}

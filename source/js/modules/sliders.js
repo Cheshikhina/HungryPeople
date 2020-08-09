@@ -23,3 +23,15 @@ if (document.querySelector('.slider_specialties')) {
     }
   });
 }
+if (document.querySelector('.slider_page')) {
+        const pageSwiper = new Swiper('.slider_page', {
+          direction: 'vertical',
+          slidesPerView: 1,
+          spaceBetween: 30,
+          mousewheel: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+        });
+}

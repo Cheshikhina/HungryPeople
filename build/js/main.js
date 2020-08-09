@@ -29827,6 +29827,19 @@ if (document.querySelector('.slider_specialties')) {
   });
 }
 
+if (document.querySelector('.slider_page')) {
+  var pageSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.slider_page', {
+    direction: 'vertical',
+    slidesPerView: 1,
+    spaceBetween: 30,
+    mousewheel: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    }
+  });
+}
+
 /***/ }),
 
 /***/ "./source/js/modules/tab.js":

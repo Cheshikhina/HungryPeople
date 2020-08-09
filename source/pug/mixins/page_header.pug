@@ -15,7 +15,7 @@ mixin page_header(data, isBig=false)
 					p.header__middle_subtitle= data.blockMiddle.subtitle
 					h1.header__middle_title.underline.underline--big= data.blockMiddle.title
 					.header__middle_controls
-						a(href=`#${data.blockMiddle.btnName.href}`).button.header__middle_btn= data.blockMiddle.btnName.name
+						a(href=`#${data.blockMiddle.btnName.href}` data-anchor='true').button.header__middle_btn= data.blockMiddle.btnName.name
 						.header__middle_search
 							+form(data.blockMiddle.form).header__middle_field
 					.header__middle_scroll

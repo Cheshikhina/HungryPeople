@@ -13,13 +13,13 @@
   }
 }
 
-// @media (min-width: $no_mobile) {
-.gallery__wrap:hover,
-.gallery__wrap:focus {
-  img {
-    transform: translateX(-10px);
-    opacity: 0.8;
+@media (min-width: $no_mobile) {
+
+  .gallery__wrap:hover,
+  .gallery__wrap:focus {
+    img {
+      transform: translateX(-10px);
+      opacity: 0.8;
+    }
   }
 }
-
-// }

@@ -1,5 +1,10 @@
 mixin page_header(data, isBig=false)
 	.container.header__inner
+		.header__inner_mobile
+			.header__logo
+				+img(data.logoLink)
+			button(class='header__burger' type='button' aria-label='Open menu')
+				span(aria-hidden='true')
 		nav.header__nav
 			.header__nav_inner
 				+links(data.headerNavLinks.left, true)
@@ -7,10 +12,10 @@ mixin page_header(data, isBig=false)
 				+img(data.logoLink)
 			.header__nav_inner
 				+links(data.headerNavLinks.right, true)
-			if !isBig
-				.header__down_scroll
-					a(href='#home' aria-label='scroll top' data-anchor='true').header__scroll
-						span
+		if !isBig
+			.header__down_scroll
+				a(href='#home' aria-label='scroll top' data-anchor='true').header__scroll
+					span
 
 		if isBig
 			.header__box

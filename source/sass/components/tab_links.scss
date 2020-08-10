@@ -10,14 +10,15 @@
   .tab_links__item {
     display: flex;
     width: auto;
-    padding: 21px 38px;
     color: $dark;
     transition: color $duration_03;
 
     h3 {
+      display: flex;
       @include font($fs_12, $lh_18);
       position: relative;
       margin: 0;
+      padding: 21px 38px;
       font-weight: 700;
       text-transform: uppercase;
       z-index: -1;
@@ -33,6 +34,13 @@
   color: $accent;
   pointer-events: none;
 }
+
+@media (max-width: $mobile_max) {
+  .tab_links__inner {
+    justify-content: flex-start;
+  }
+}
+
 
 @media (min-width: $no_mobile) {
 

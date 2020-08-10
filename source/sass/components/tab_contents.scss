@@ -72,13 +72,19 @@
     width: 0;
     bottom: 0;
     white-space: nowrap;
-    content: ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+    content: ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
   }
 }
 
 @media (max-width: $tablet_max) {
   .tab_contents__list {
     grid-template-columns: repeat(2, 48%);
+  }
+}
+
+@media (max-width: $mobile_max) {
+  .tab_contents__list {
+    grid-template-columns: 1fr;
   }
 }
 

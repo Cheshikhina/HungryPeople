@@ -244,30 +244,82 @@
 
   .section__photo_link {
     .section__img {
-      width: 80%;
-      padding-bottom: 80%;
-    }
-
-    &:nth-child(odd) {
-      .section__img {
-        margin: 50px auto;
-      }
+      width: 70%;
+      padding-bottom: 70%;
     }
   }
 
-  // .section__photo_link:nth-child(even) {
-  //   .section__photo_subtitle {
-  //     transform-origin: top left;
-  //     transform: rotate(-90deg) translateX(-100%);
-  //   }
+  .section__photo_link:nth-child(even) {
+    .section__img {
+      margin-right: auto;
+      margin-left: 20px;
+    }
+  }
+}
 
-  //   .section__img::after {
-  //     left: auto;
-  //     right: 0;
-  //     transform: translate(50%, -50%);
-  //     box-shadow: 0 0 100px rgba(0, 0, 0, .5);
-  //   }
-  // }
+@media (max-width: $mobile_max) {
+  .section {
+    padding: 50px 0;
+    min-height: auto;
+  }
+
+  .section__head {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .section__img {
+    padding-bottom: 100%;
+    width: 100%;
+    margin: 20px auto;
+
+    img,
+    picture {
+      box-shadow: none;
+    }
+  }
+
+  .section__footer {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+
+  .section--reverse .section__img {
+    margin: 20px auto;
+  }
+
+  .section--booking .section__img {
+    display: none;
+  }
+
+  .section--events,
+  .section--menu .section__wrap {
+    display: grid;
+  }
+
+  .section__photos {
+    grid-template-columns: 1fr;
+
+  }
+
+  .section__photo_link:nth-child(odd) .section__img,
+  .section__photo_link:nth-child(even) .section__img {
+    width: 80%;
+    margin: 20px auto;
+  }
+
+  .section__photo_subtitle {
+    width: 87.5%;
+    transform: rotate(90deg) translate(100%, -100%);
+  }
+
+  .section--events .section__footer {
+    margin: 20px 0;
+  }
+
+  .section--map {
+    min-height: 400px;
+  }
 }
 
 @media (min-width: $no_mobile) {

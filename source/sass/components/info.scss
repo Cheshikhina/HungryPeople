@@ -17,6 +17,12 @@
     @include textBlock;
   }
 
+  @media (max-width: $mobile_max) {
+     .info {
+       padding: 0;
+     }
+  }
+
   @media (min-width: $no_mobile) {
     .info--animated {
       .info__title {

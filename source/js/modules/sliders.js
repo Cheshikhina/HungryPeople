@@ -4,7 +4,7 @@ import Swiper from 'swiper';
 if (document.querySelector('.slider_specialties')) {
   const mainSlider = new Swiper('.slider_specialties', {
     slidesPerView: 1,
-    // spaceBetween: 100,
+    autoHeight: true,
     speed: 700,
     effect: 'fade',
     fadeEffect: {
@@ -22,16 +22,34 @@ if (document.querySelector('.slider_specialties')) {
       notificationClass: 'visually_hidden'
     }
   });
-}
-if (document.querySelector('.slider_page')) {
-        const pageSwiper = new Swiper('.slider_page', {
-          direction: 'vertical',
-          slidesPerView: 1,
-          spaceBetween: 30,
-          mousewheel: true,
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-          },
-        });
+
+
+  const MOBILE_MEDIA = '(max-width: 767px)',
+    breakpointMobile = window.matchMedia(MOBILE_MEDIA);
+
+  let tabsSlider;
+
+  function tabsSliderInit() {
+    tabsSlider = new Swiper('.tab_links', {
+      slidesPerView: 'auto',
+      spaceBetween: 0,
+      pagination: {
+        clickable: true,
+      }
+    });
+  }
+
+  function breakpointMobileChecker() {
+    if (breakpointMobile.matches === false) {
+      if (tabsSlider !== undefined) {
+        tabsSlider.destroy(true, true);
+      }
+      return;
+    } else if (breakpointMobile.matches === true) {
+      return tabsSliderInit();
+    }
+  }
+
+  breakpointMobile.addListener(breakpointMobileChecker);
+  breakpointMobileChecker();
 }

@@ -57,6 +57,12 @@
   }
 }
 
+@media (max-width: $mobile_max) {
+  .slider_specialties__pagination {
+    transform: none;
+  }
+}
+
 @media (min-width: $no_mobile) {
   .slider_specialties__pagination--animated {
     animation: fade $duration_07 $duration_07+$duration_03 both;

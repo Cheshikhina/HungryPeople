@@ -180,6 +180,10 @@
   margin: 0;
   font-weight: 700;
   text-transform: uppercase;
+
+  @media (max-width: $mobile_max) {
+  @include font($fs_34, $lh_48);
+  }
 }
 
 @mixin descBlock {

@@ -25,3 +25,10 @@
     box-shadow: $shadow_br_opacity;
   }
 }
+
+@media (max-width: $mobile_max) {
+  .border::after,
+  .border--right::after {
+    display: none;
+  }
+}

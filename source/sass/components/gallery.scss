@@ -12,6 +12,11 @@
     transition: transform $duration_03, opacity $duration_03;
   }
 }
+@media (max-width: $mobile_max) {
+.gallery {
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5px;
+}}
 
 @media (min-width: $no_mobile) {
 

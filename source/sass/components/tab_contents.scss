@@ -76,6 +76,12 @@
   }
 }
 
+@media (max-width: $tablet_max) {
+  .tab_contents__list {
+    grid-template-columns: repeat(2, 48%);
+  }
+}
+
 @media (min-width: $no_mobile) {
 
   .tab_contents__list {

@@ -1,8 +1,6 @@
 import 'svgxuse';
 import 'lazysizes';
 import './modules/sliders';
-// import './modules/dateInput';
-// import './modules/gallery';
 import common from './modules/common';
 import gallery from './modules/gallery';
 import parallax from './modules/parallax';

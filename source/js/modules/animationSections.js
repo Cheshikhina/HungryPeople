@@ -13,11 +13,19 @@ const animationSections = () => {
   }
 
   function animationSection(block, isShow = true) {
+    const scrollTop = document.querySelector('.header__down_scroll');
+
     if (isShow) {
       if (block.classList.contains('footer')) {
         block.classList.add('footer--animated');
       } else {
         block.classList.add('section--animated');
+
+        if (block.id === 'about_us') {
+          scrollTop.classList.remove('header__down_scroll--open');
+        } else {
+          scrollTop.classList.add('header__down_scroll--open');
+        }
       }
       if (block.querySelectorAll('.info')[0]) {
         block.querySelectorAll('.info').forEach(infoBlock => {

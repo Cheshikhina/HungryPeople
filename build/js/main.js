@@ -29254,8 +29254,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_form__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/form */ "./source/js/modules/form.js");
 
 
- // import './modules/dateInput';
-// import './modules/gallery';
 
 
 
@@ -29316,12 +29314,19 @@ var animationSections = function animationSections() {
 
   function animationSection(block) {
     var isShow = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+    var scrollTop = document.querySelector('.header__down_scroll');
 
     if (isShow) {
       if (block.classList.contains('footer')) {
         block.classList.add('footer--animated');
       } else {
         block.classList.add('section--animated');
+
+        if (block.id === 'about_us') {
+          scrollTop.classList.remove('header__down_scroll--open');
+        } else {
+          scrollTop.classList.add('header__down_scroll--open');
+        }
       }
 
       if (block.querySelectorAll('.info')[0]) {
@@ -29707,8 +29712,7 @@ var form = function form() {
         select.value = ' ';
         select.querySelector('option').setAttribute('value', '1');
         selectItem.textContent = ' ';
-        selectItem.setAttribute('data-value', '1'); // console.log(select);
-        // console.log(selectItem);
+        selectItem.setAttribute('data-value', '1');
       });
     }
   }

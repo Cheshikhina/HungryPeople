@@ -46,6 +46,17 @@
   }
 }
 
+@media (max-width: $tablet_max) {
+  .slider_specialties__slide {
+    grid-template-columns: 1fr;
+  }
+
+  .slider_specialties__slide:nth-child(even)>:last-child {
+    order: 1;
+    margin: 50px auto;
+  }
+}
+
 @media (min-width: $no_mobile) {
   .slider_specialties__pagination--animated {
     animation: fade $duration_07 $duration_07+$duration_03 both;

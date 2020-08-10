@@ -1,28 +1,47 @@
 import Choices from "choices.js";
+let arrChoices = [];
 
-const selectChoice = (selector) => {
-  const selects = document.querySelectorAll(selector);
+const selectChoice = (form, isDestroy = false) => {
 
-  selects.forEach(select => {
-    let choices = new Choices(select, {
-      searchEnabled: false,
-      itemSelectText: '',
-      placeholderValue: '',
-      classNames: {
-        containerOuter: 'choices',
-        containerInner: 'choices__inner',
-      },
+  function deleteLabelClass(node) {
+    const selectWrap = node.parentNode.parentNode.parentNode;
+    if (node.value == 1 && selectWrap.classList.contains('placeholder--current')) {
+      selectWrap.classList.remove('placeholder--current');
+    } else {
+      selectWrap.classList.add('placeholder--current');
+    }
+  }
+
+  if (isDestroy) {
+    form.querySelectorAll('select').forEach(select => {
+      deleteLabelClass(select);
     });
-
-    select.addEventListener('change', function (evt) {
-      const selectWrap = evt.target.parentNode.parentNode.parentNode;
-      if (evt.target.value == 1 && selectWrap.classList.contains('placeholder--current')) {
-        selectWrap.classList.remove('placeholder--current');
-      } else {
-        selectWrap.classList.add('placeholder--current');
-      }
+    arrChoices.forEach(item => {
+      item.destroy();
     });
-  });
+    arrChoices = [];
+  }
+
+  const selects = form.querySelectorAll('select');
+
+  if (selects[0]) {
+    selects.forEach(select => {
+      let choice = new Choices(select, {
+        searchEnabled: false,
+        itemSelectText: '',
+        placeholderValue: '',
+        classNames: {
+          containerOuter: 'choices',
+          containerInner: 'choices__inner',
+        },
+      });
+      arrChoices.push(choice);
+      select.addEventListener('change', function (evt) {
+        deleteLabelClass(evt.target);
+      });
+
+    });
+  }
 };
 
 export default selectChoice;

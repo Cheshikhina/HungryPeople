@@ -73,7 +73,7 @@ const animationSections = () => {
         }
       });
 
-      if (block.querySelector('#booking_date')) {
+      if (block.querySelector('#booking_date') && document.querySelector('.flatpickr-calendar') && document.querySelector('.flatpickr-calendar').classList.contains('open')) {
         document.querySelector('.flatpickr-calendar').classList.remove('open');
         document.querySelector('#booking_date').blur();
       }

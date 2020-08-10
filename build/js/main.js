@@ -29251,12 +29251,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_tab__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/tab */ "./source/js/modules/tab.js");
 /* harmony import */ var _modules_map__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/map */ "./source/js/modules/map.js");
 /* harmony import */ var _modules_label__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/label */ "./source/js/modules/label.js");
-/* harmony import */ var _modules_dateInput__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/dateInput */ "./source/js/modules/dateInput.js");
-/* harmony import */ var _modules_selectChoice__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules/selectChoice */ "./source/js/modules/selectChoice.js");
+/* harmony import */ var _modules_form__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/form */ "./source/js/modules/form.js");
 
 
- // import './modules/gallery';
-
+ // import './modules/dateInput';
+// import './modules/gallery';
 
 
 
@@ -29278,8 +29277,7 @@ window.addEventListener('DOMContentLoaded', function () {
   Object(_modules_map__WEBPACK_IMPORTED_MODULE_10__["default"])();
   Object(_modules_gallery__WEBPACK_IMPORTED_MODULE_4__["default"])();
   Object(_modules_label__WEBPACK_IMPORTED_MODULE_11__["default"])();
-  Object(_modules_dateInput__WEBPACK_IMPORTED_MODULE_12__["default"])('#booking_date');
-  Object(_modules_selectChoice__WEBPACK_IMPORTED_MODULE_13__["default"])('.form--booking select');
+  Object(_modules_form__WEBPACK_IMPORTED_MODULE_12__["default"])();
 });
 
 /***/ }),
@@ -29386,7 +29384,7 @@ var animationSections = function animationSections() {
         }
       });
 
-      if (block.querySelector('#booking_date')) {
+      if (block.querySelector('#booking_date') && document.querySelector('.flatpickr-calendar') && document.querySelector('.flatpickr-calendar').classList.contains('open')) {
         document.querySelector('.flatpickr-calendar').classList.remove('open');
         document.querySelector('#booking_date').blur();
       }
@@ -29484,8 +29482,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var dateInput = function dateInput(selector) {
-  var date = document.querySelector(selector);
-  flatpickr__WEBPACK_IMPORTED_MODULE_0___default()(date, {
+  var dateItem = flatpickr__WEBPACK_IMPORTED_MODULE_0___default()(selector, {
     enableTime: false,
     dateFormat: "m-d",
     minDate: "today",
@@ -29494,6 +29491,252 @@ var dateInput = function dateInput(selector) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (dateInput);
+
+/***/ }),
+
+/***/ "./source/js/modules/form.js":
+/*!***********************************!*\
+  !*** ./source/js/modules/form.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/core-js/modules/es.array.for-each.js");
+/* harmony import */ var core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_function_name__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.function.name */ "./node_modules/core-js/modules/es.function.name.js");
+/* harmony import */ var core_js_modules_es_function_name__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_es_regexp_exec__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.regexp.exec */ "./node_modules/core-js/modules/es.regexp.exec.js");
+/* harmony import */ var core_js_modules_es_regexp_exec__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var core_js_modules_es_string_match__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.string.match */ "./node_modules/core-js/modules/es.string.match.js");
+/* harmony import */ var core_js_modules_es_string_match__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_match__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var core_js_modules_es_string_trim__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.string.trim */ "./node_modules/core-js/modules/es.string.trim.js");
+/* harmony import */ var core_js_modules_es_string_trim__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_trim__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _selectChoice__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./selectChoice */ "./source/js/modules/selectChoice.js");
+/* harmony import */ var _dateInput__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./dateInput */ "./source/js/modules/dateInput.js");
+
+
+
+
+
+
+
+
+
+var form = function form() {
+  var forms = document.querySelectorAll('form[method="POST"]'),
+      inputs = document.querySelectorAll('form[method="POST"] input, form[method="POST"] select, form[method="POST"] textarea');
+  var URL = 'http://httpbin.org/post';
+
+  function createTextPlaceholder(input) {
+    var regexpName = /^[A-Za-zА-Яа-яЁё]{2}[A-Za-zА-Яа-яЁё\s]*/g,
+        regexpPhone = /\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}/g,
+        regexpMail = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/g;
+    var message = false;
+
+    if (!input.value.length || !input.value) {
+      message = 'This entry is required';
+    } else {
+      switch (input.name) {
+        case 'name':
+          if (input.value.trim() === '') {
+            message = 'Enter your name without spaces before';
+          } else if (!input.value.match(regexpName)) {
+            message = 'This entry must be at least 2 characters';
+          }
+
+          break;
+
+        case 'phone':
+          if (!input.value.match(regexpPhone)) {
+            message = 'Enter the correct phone number';
+          }
+
+          break;
+
+        case 'email':
+          if (!input.value.match(regexpMail)) {
+            message = 'Enter the correct email';
+          }
+
+          break;
+
+        case 'people':
+          if (input.value === '1') {
+            message = 'This entry is required';
+          }
+
+          break;
+
+        case 'time':
+          if (input.value === '1') {
+            message = 'This entry is required';
+          }
+
+          break;
+
+        default:
+          message = false;
+      }
+    }
+
+    return message;
+  }
+
+  function removeFormMessage(node) {
+    var span = node.parentNode.parentNode.querySelector('.message');
+    span.classList.add('delete');
+    setTimeout(function () {
+      span.remove();
+    }, 300);
+  }
+
+  function createSpan(node, message) {
+    var isFormSpend = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+    if (isFormSpend && node.parentNode.querySelector('span.message') || !isFormSpend && node.parentNode.querySelector('span')) {
+      return;
+    }
+
+    var span = document.createElement('span');
+    span.textContent = message;
+    node.parentNode.appendChild(span);
+
+    if (isFormSpend) {
+      span.classList.add('message');
+      setTimeout(function () {
+        removeFormMessage(node);
+      }, 2000);
+
+      if (isFormSpend === 'error') {
+        span.classList.add('error');
+      } else {
+        node.reset();
+
+        if (closeModal) {
+          setTimeout(function () {
+            closeModal();
+          }, 2100);
+        }
+      }
+    }
+  }
+
+  function removePlaceholder(evt) {
+    if (evt.target.parentNode.querySelector('span')) {
+      evt.target.parentNode.querySelector('span').style.opacity = '0';
+      setTimeout(function () {
+        if (evt.target.parentNode.querySelector('span')) {
+          evt.target.parentNode.querySelector('span').remove();
+        }
+      }, 300);
+    }
+  }
+
+  function checkForm(formCuttent) {
+    var inputsCuttent = formCuttent.querySelectorAll('input, textarea, select');
+    var flag = false;
+    inputsCuttent.forEach(function (input) {
+      if (createTextPlaceholder(input)) {
+        createSpan(input, createTextPlaceholder(input));
+        flag = true;
+      }
+    });
+    return flag;
+  }
+
+  function submitForm(evt) {
+    evt.preventDefault();
+
+    if (checkForm(evt.target)) {
+      return;
+    }
+
+    var data = new FormData(evt.target);
+    var xhr = new XMLHttpRequest();
+
+    xhr.onloadstart = function (event) {
+      xhr.responseType = "json";
+    };
+
+    xhr.open('POST', URL);
+    xhr.send(data);
+    xhr.addEventListener('load', function (e) {
+      var target = e.target;
+
+      try {
+        if (target.status === 200) {
+          if (evt.target.querySelectorAll('.choices')[0]) {
+            Object(_selectChoice__WEBPACK_IMPORTED_MODULE_6__["default"])(evt.target, true);
+          }
+
+          evt.target.reset();
+          resetForm(evt.target);
+          createSpan(evt.target, 'Data sent successfully', true);
+        } else if (target.response.message) {
+          createSpan(evt.target, target.response.message, 'error');
+        } else {
+          createSpan(evt.target, 'Internal server error', 'error');
+        }
+      } catch (err) {
+        createSpan(evt.target, err, 'error');
+      }
+    });
+    xhr.addEventListener('error', function () {
+      createSpan(evt.target, 'Connection error', 'error');
+    });
+  }
+
+  function resetForm(form) {
+    var placeholders = form.querySelectorAll('.placeholder--current'),
+        selectsWrap = form.querySelectorAll('.choices');
+
+    if (placeholders[0]) {
+      placeholders.forEach(function (placeholder) {
+        placeholder.classList.remove('placeholder--current');
+      });
+    }
+
+    if (selectsWrap[0]) {
+      selectsWrap.forEach(function (selectWrap) {
+        var select = selectWrap.querySelector('select'),
+            selectItem = selectWrap.querySelector('.choices__item');
+        select.value = ' ';
+        select.querySelector('option').setAttribute('value', '1');
+        selectItem.textContent = ' ';
+        selectItem.setAttribute('data-value', '1'); // console.log(select);
+        // console.log(selectItem);
+      });
+    }
+  }
+
+  forms.forEach(function (item) {
+    item.addEventListener('submit', submitForm);
+
+    if (item.querySelectorAll('select')[0]) {
+      Object(_selectChoice__WEBPACK_IMPORTED_MODULE_6__["default"])(item);
+    }
+
+    if (item.querySelector('[type="date"]')) {
+      Object(_dateInput__WEBPACK_IMPORTED_MODULE_7__["default"])(item.querySelector('[type="date"]'));
+    }
+  });
+  inputs.forEach(function (input) {
+    input.removeAttribute('required');
+
+    if (input.name === 'email') {
+      input.setAttribute('type', 'text');
+    }
+
+    input.addEventListener('input', removePlaceholder);
+    input.addEventListener('change', removePlaceholder);
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (form);
 
 /***/ }),
 
@@ -29763,29 +30006,50 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var arrChoices = [];
 
-var selectChoice = function selectChoice(selector) {
-  var selects = document.querySelectorAll(selector);
-  selects.forEach(function (select) {
-    var choices = new choices_js__WEBPACK_IMPORTED_MODULE_2___default.a(select, {
-      searchEnabled: false,
-      itemSelectText: '',
-      placeholderValue: '',
-      classNames: {
-        containerOuter: 'choices',
-        containerInner: 'choices__inner'
-      }
-    });
-    select.addEventListener('change', function (evt) {
-      var selectWrap = evt.target.parentNode.parentNode.parentNode;
+var selectChoice = function selectChoice(form) {
+  var isDestroy = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
 
-      if (evt.target.value == 1 && selectWrap.classList.contains('placeholder--current')) {
-        selectWrap.classList.remove('placeholder--current');
-      } else {
-        selectWrap.classList.add('placeholder--current');
-      }
+  function deleteLabelClass(node) {
+    var selectWrap = node.parentNode.parentNode.parentNode;
+
+    if (node.value == 1 && selectWrap.classList.contains('placeholder--current')) {
+      selectWrap.classList.remove('placeholder--current');
+    } else {
+      selectWrap.classList.add('placeholder--current');
+    }
+  }
+
+  if (isDestroy) {
+    form.querySelectorAll('select').forEach(function (select) {
+      deleteLabelClass(select);
     });
-  });
+    arrChoices.forEach(function (item) {
+      item.destroy();
+    });
+    arrChoices = [];
+  }
+
+  var selects = form.querySelectorAll('select');
+
+  if (selects[0]) {
+    selects.forEach(function (select) {
+      var choice = new choices_js__WEBPACK_IMPORTED_MODULE_2___default.a(select, {
+        searchEnabled: false,
+        itemSelectText: '',
+        placeholderValue: '',
+        classNames: {
+          containerOuter: 'choices',
+          containerInner: 'choices__inner'
+        }
+      });
+      arrChoices.push(choice);
+      select.addEventListener('change', function (evt) {
+        deleteLabelClass(evt.target);
+      });
+    });
+  }
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (selectChoice);

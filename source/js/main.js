@@ -1,6 +1,7 @@
 import 'svgxuse';
 import 'lazysizes';
 import './modules/sliders';
+// import './modules/dateInput';
 // import './modules/gallery';
 import common from './modules/common';
 import gallery from './modules/gallery';
@@ -11,8 +12,7 @@ import scroll from './modules/scroll';
 import tab from './modules/tab';
 import map from './modules/map';
 import label from './modules/label';
-import dateInput from './modules/dateInput';
-import selectChoice from './modules/selectChoice';
+import form from './modules/form';
 
 window.addEventListener('DOMContentLoaded', () => {
   common();
@@ -24,6 +24,6 @@ window.addEventListener('DOMContentLoaded', () => {
   map();
   gallery();
   label();
-  dateInput('#booking_date');
-  selectChoice('.form--booking select');
+  form();
 });
+
